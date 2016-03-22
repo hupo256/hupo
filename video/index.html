@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no, email=no" /><!-- 禁止数字识自动别为电话号码 -->
+<title>int</title>
+<link rel="stylesheet" href="css/intt.css?we-222" />
+
+<!-- 禁用缓存 -->
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />  
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+<title>唤醒你的每一分钱</title>
+<link rel="stylesheet" href="css/intt.css?oki-555" />
+
+</head>
+<body>
+<div class="wrapper">
+	<!-- 一出来就加载一张图片，完成后就开始动起来 -->
+	<section class="loading ">
+		<img src="image/loading.gif" alt="" />
+	</section>
+	
+	<section class="slpbox">
+		<div class="lhand"></div>
+		<div class="rhand"></div>  
+	</section>
+
+	<!-- <section class="videobox d_none"> -->
+	<section class="videobox">
+		<video id="tvideo" class="tvideo" autoplay webkit-playsinline>
+		<!-- <video id="tvideo" class="tvideo d_none" preload webkit-playsinline> -->
+			<source src="image/coinplay.mp4" type="video/mp4" />
+			<!-- <source src="image/mov_bbb.mp4" type="video/mp4" /> -->
+		</video>
+		<canvas class="canvideo" width="375" height="605" id="canvas"></canvas>
+	</section>	
+	
+	<section class="int_rst d_none">
+		<div class="scorebox"></div>		
+		<a href="#" class="btn tryagain"></a>
+		<a href="#" class="btn totaste "></a>
+	</section>
+
+	<section class="poptips d_none">
+		<div class="tips"></div>
+	</section>	
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/touch_min.js"></script>
+<script src="js/intt.js"></script>
+</body>
+</html>

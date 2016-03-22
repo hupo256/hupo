@@ -1,0 +1,904 @@
+var OP_Tools = window.OP_Tools = OP_Tools || {};
+$(function () {
+	/*******************
+	 *
+	 * tab动画切换类
+	 * @param  conArr  切换的内容列表
+	 *		   tabArr  切换的序号列表
+	 *
+	 *******************/
+	OP_Tools.TabAnimate = function (conArr, tabArr) {
+		this.con = conArr;
+		this.tab = tabArr;
+		this._index = null;
+	}
+
+	OP_Tools.TabAnimate.prototype = {
+		displayer : function (type, callbacks) {
+			var _ind = this._index,
+			_con = this.con;
+			type = type || 'fade'
+				switch (type) {
+				case 'fade':
+					_con.eq(_ind).stop(true, true).fadeIn(400).siblings().fadeOut(200);
+					break;
+				case 'show':
+					_con.stop(true, true).hide().eq(_ind).show();
+					break;
+				}
+				this.tab.removeClass('on').eq(_ind).addClass('on');
+			if (callbacks)
+				callbacks(_con.eq(_ind));
+		},
+
+		addMouseover : function (type, callbacks) {
+			var _tabs = this.tab,
+			that = this;
+			_tabs.mouseover(function () {
+				that._index = _tabs.index(this);
+				that.displayer(type, callbacks);
+			});
+		},
+
+		addInterval : function (time, callbacks) {
+			var that = this,
+			_len = this.tab.length,
+			_intv = null;
+			this.con.parent().hover(function () {
+				clearInterval(_intv);
+			}, function () {
+				_intv = setInterval(function () {
+						that._index++;
+						if (_len === that._index)
+							that._index = 0;
+						that.displayer(false, callbacks);
+					}, time);
+			}).trigger('mouseleave');
+		}
+	}
+
+
+	/*******************
+	 *
+	 * tab菜单切换类
+	 * @param  tabbox  菜单容器
+	 *
+	 *******************/
+	 OP_Tools.TabMenu = function(tabbox){
+		this.tabbox = tabbox;
+	 }
+	 
+	 OP_Tools.TabMenu.prototype = {
+		doMenu : function(tag, bool){
+			var tag = tag || 'a',
+				bool = bool || 1,
+				tabs = this.tabbox.find(tag);
+			tabs.on('click', function () {
+				tabs.removeClass('on');
+				$(this).addClass('on');
+				if(bool) return false;	
+			});	
+		}	 
+	 }	 
+	 
+	
+	/*******************
+	 *
+	 * 截取文字长度
+	 * @param  textbox  文字容器
+	 *		   arr  内容数组
+	 *
+	 *******************/
+	OP_Tools.sliceTheText = function(textbox, arr){
+		this.textbox = textbox;
+		this.arr = arr;
+		this._stex = '';
+		this._btex = '';				
+	}
+	
+	OP_Tools.sliceTheText.prototype = {
+		cutText : function(num, text){
+			var	text = text || '展开',
+				_ar = this.arr.slice(0,num),
+				_box = this.textbox;
+			this._stex = this.arrToText(_ar) + '<b class="txt_control toopen">' + text + '</b>';
+			_box.html(this._stex);
+			this._btex = this.arrToText(this.arr);
+			this.bindEvent();			
+		},
+		
+		bindEvent : function(text){
+			var text = text || '收起',
+				that = this,
+				_box = this.textbox;			
+			_box.on('click','.toopen',function(){
+				var _text = that._btex + '<b class="txt_control toclose">' + text + '</b>';
+				_box.html(_text);
+			});			
+			_box.on('click','.toclose',function(){
+				_box.html(that._stex);
+			});
+		},
+		
+		arrToText : function(arr){
+			var _tex = '';
+			for(var i=0, k=arr.length; i<k; i++){
+				_tex += '<i>' + arr[i] + ';</i>';
+			}
+			return _tex;
+		}		
+	}	 
+	 
+	
+	/*******************
+	 *
+	 * 弹层类
+	 * @param  id  弹出的dom
+	 *		   close  关闭按钮
+	 *		   config  设置参数
+	 *
+	 *******************/
+	OP_Tools.popDom = function (id, close, config) {
+		config = config || 1;
+		//默认值
+		var options = {
+			struc : id, //弹层ID
+			close : close, //关闭按钮
+			drag : config.drag || false, //拖动效果
+			diagCursor : config.diagCursor || 'move', //拖动鼠标样式
+			time : config.time || 'max', //定时器默认为不开启定时器
+			isFrame : config.isFrame || true, //是否开启遮罩层
+			opacity : config.opacity || 0.5, //遮罩层默认透明度
+			backcolor : config.backcolor || '#ccc', //遮罩层默认背景色
+			zIndex : config.zIndex || 24, //浮层起始层级
+			fixed : config.fixed || true, //开启滚动事件
+			ParIframe : config.ParIframe || false, //开启iframe 穿透
+			functionAfterClose : config.functionAfterClose || null, //关闭之后的回调函数
+			isloc : config.isloc || false //是否每次弹出重新定位浮层
+		};
+		var box = KM.widget.Dialog('struc', options),
+		_callback = config.callback;
+		box.alert();
+		if (typeof _callback == 'function')	_callback(id);
+
+		this.id = id;
+		this.tip = null;
+	}
+
+	OP_Tools.popDom.prototype = {
+		//显示提示
+		showTip : function (text, time) {
+			var text = text || '这里显示错误信息...',
+			time = time || 3000,
+			_tip = this.tip = $(this.id).find('erro_tip');
+			if (!_tip[0]) {
+				_tip  = $('<div class="erro_tip"><span class="dib">' + text + '</span></div>');
+				$(this.id).append(_tip);
+				_tip.fadeIn().delay(time).fadeOut();
+			} else {
+				_tip.fadeIn().delay(time).fadeOut();
+			}
+		},
+
+		//关闭提示
+		hideTip : function () {
+			this.tip.fadeOut();
+		}
+	}
+	
+	
+	/*******************
+	 *
+	 * class
+	 * 下拉框类
+	 * @param  inputDom  被点击的input节点
+	 *         listObj   下拉框信息的JSON
+	 *
+	 *******************/
+	OP_Tools.SelectList = function (inputDom, listObj) {
+		this.inputDom = inputDom;
+		this.listObj = listObj;
+		this.panel = null;
+	}
+
+	//初始化对象
+	OP_Tools.SelectList.prototype = {
+		draw : function (callback) {
+			var listDom = this.panel = this.creatList(callback),
+			xy = this.getThePosition(this.inputDom);
+			listDom.style.left = xy.x + "px";
+			listDom.style.top = (xy.y + this.inputDom.clientHeight + 2) + "px";
+			listDom.style.width = (this.inputDom.clientWidth) + "px";
+			document.body.appendChild(listDom);
+			listDom.style.display = 'block';
+			this.hide(listDom);
+		},
+
+		//创建下拉框的dom
+		creatList : function (callback) {
+			var _list = this.listObj,
+			_con = '',
+			_ul = document.getElementById('_select-list');
+			if (!_ul) {
+				_ul = document.createElement('ul');
+				_ul.id = '_select-list';
+			}
+			for (var i = 0, k = _list.length; i < k; i++) {
+				var _o = _list[i],
+				_tex = _o.text,
+				_cod = _o.code;
+				_con += '<li data-code="' + _cod + '"><span class="dib ell" title="' + _tex + '">' + _tex + '</span></li>';
+			}
+			_ul.innerHTML = _con;
+			this.bindListEvent(_ul, callback);
+			return _ul;
+		},
+
+		//获取目录的位置
+		getThePosition : function (e) {
+			var x = e.offsetLeft,
+			y = e.offsetTop,
+			that = this;
+			while (e.offsetParent && e.offsetParent.nodeName !== 'BODY') {
+				e = e.offsetParent;
+				if (e.style.position == 'fixed')
+					this.panel.style.position = "fixed";
+				x += e.offsetLeft;
+				y += e.offsetTop - e.scrollTop;
+			}
+			return {
+				"x" : x,
+				"y" : y
+			};
+		},
+
+		//绑定点击事件
+		bindListEvent : function (dom, callback) {
+			var that = this,
+			_lis = dom.getElementsByTagName('li');
+			for (var i = 0, k = _lis.length; i < k; i++) {
+				_lis[i].onclick = function (e) {
+					var _inp1 = that.inputDom,
+					_tex = this.getElementsByTagName('span')[0].innerHTML,
+					_cod = this.getAttribute("data-code"),
+					_inp2 = _inp1.parentNode.getElementsByTagName('input')[1];
+					if (_inp2)
+						_inp2.value = _cod;
+					_inp1.value = _tex;
+					_inp1.focus();
+					this.parentNode.style.display = 'none';
+					var _obj = {
+						code : _cod,
+						text : _tex
+					}
+					if (callback)
+						callback(_obj);
+				};
+			};
+		},
+
+		//控制隐藏
+		hide : function (dom) {
+			$(dom).mouseleave(function () {
+				$(this).hide();
+				this.style.position = 'absolute';
+			});
+			$(document.body).click(function () {
+				$(dom).hide();
+				dom.style.position = 'absolute';
+			});
+		}
+	}
+	
+	
+	/*******************
+	 *
+	 * class
+	 * 表格行的编辑类 
+	 * @param  table  所要编辑的表格
+	 *
+	*******************/
+	OP_Tools.EditOnTable = function(table){
+		this.table = table;
+		this.trStatus = 1;
+		this.bindEvent();
+	}	
+	
+	OP_Tools.EditOnTable.prototype = {	
+		//添加行
+		addTr : function(_tex){
+			if(this.isStatusOn()) return false;
+			// var _tex = '<tr><td><input type="checkbox" /></td>'
+					  // +'<td><input type="text" /></td>'
+					  // +'<td><input type="text" /></td>'
+					  // +'<td><input type="text" /></td>'
+					  // +'<td><input type="text" /></td>'
+					  // +'<td><input type="text" /></td>'
+					  // +'<td><input type="text" /></td>'
+					  // +'<td>'
+						// +'<u class="ico io_save"></u> '
+						// +'<u class="ico io_delete"></u>'
+					  // +'</td></tr>';
+			this.table.find('tr:last').after($(_tex));
+			this.refreshRowBg();
+			this.trStatus = 1;
+		},
+		
+		//编辑行
+		editTr : function(){
+			var that = this;			
+			$(document).on('click', '.io_edit', function(){
+				if(that.isStatusOn()) return false;
+				console.log(that.trStatus);
+				var _tds = $(this).parent().prevAll();		
+				for(var i=0, k=_tds.length-1; i<k; i++){
+					var _td = _tds.eq(i),
+						_tex = _td.text();
+					_td.html('<input type="text" value="' + _tex +'" />');
+				}
+				$(this).removeClass('io_edit').addClass('io_save');	
+				that.trStatus = 1;
+			});
+		},
+
+		//保存行
+		saveTr : function(){
+			var that = this;
+			$(document).on('click', '.io_save', function(){
+				var _tds = $(this).parent().prevAll();		
+				for(var i=0, k=_tds.length-1; i<k; i++){
+					var _td = _tds.eq(i),
+						_tex = _td.find('input').val();
+					_td.html(_tex);
+				}
+				$(this).removeClass('io_save').addClass('io_edit');
+				that.trStatus = 0;
+			});
+		},
+		
+		//删除行
+		delTr : function(){
+			var that = this;
+			$(document).on('click', '.io_delete', function(){
+				// var _tr = $(this).parent().parent();
+				$(this).parent().parent().remove();
+				
+				var _trs = that.table.find('tr:gt(0)');
+				if(!_trs[0]){
+					that.trStatus = 0;
+					that.addTr();
+				}
+				that.refreshRowBg(_trs);
+			});			
+		},
+		
+		//绑定事件
+		bindEvent : function(){
+			this.editTr();
+			this.saveTr();
+			this.delTr();
+		},
+		
+		//刷行背景
+		refreshRowBg : function(trs){
+			var trs = trs || this.table.find('tr:gt(0)');
+			trs.each(function(i,d){
+				i%2 ? $(d).addClass('bgc') : $(d).removeClass('bgc');				
+			});
+		},
+
+		//判断行的编辑状态
+		isStatusOn : function(){
+			if(this.trStatus){
+				alert('请先保存上一条信息的修改');
+				return true;
+			}		
+		}
+	}
+	
+	
+	/*******************
+	 *
+	 * class
+	 * 邮件地址选择器 
+	 * @param  readybox   备选框容器  （JQ对象）
+	 * @param  selectbox  已选框容器  （JQ对象）
+	 *
+	*******************/
+	OP_Tools.StaffSelector = function(readybox, selectbox){
+		this.readybox = readybox;
+		this.selectbox = selectbox;
+		this.readyDate = [];
+		this.submitData = [];		
+	}
+	
+	OP_Tools.StaffSelector.prototype = {
+		//生成备选list
+		createReadybox : function(list){
+			var rbox = this.readybox, sbox = this.selectbox, _tex = '', that = this;
+			this.readyDate = list;
+			for(var i=0, k=list.length; i<k; i++){
+				var _d = list[i];
+				_tex +='<li>'
+					+'<b class="ell" data-uid="'+ _d.empCode + '"  title="' + _d.name + '">' + _d.name + '</b>'
+					+'<b class="ell" title="' + _d.deptName + '">' + _d.deptName + '</b>'
+					+'<b class="ell" title="' + _d.email + '">' + _d.email + '</b>'			
+					+'</li>';
+			}			
+			rbox.html(_tex);
+			
+			//顺便绑定事件?
+			rbox.find('li').on('click', function(){				
+				$(this).hide(50);	//隐藏			
+				var _te = $(this).html() + '<b class="ell"><u class="ico io_delete del_remail"></u></b>';
+				$('<li />').append($(_te)).appendTo(sbox);	//加上
+				
+				//更新submitData
+				var _id = $(this).find('b').eq(0)[0].getAttribute('data-uid');
+				that.addObjById(_id);				
+			});
+			
+			this.bindEventOnDel();
+		},
+		
+		//生成已选项
+		createSelectbox : function(list){
+			var rbox = this.readybox, sbox = this.selectbox, _tex = '', that = this;
+			for(var i=0, k=list.length; i<k; i++){
+				var _d = list[i];
+				_tex +='<li>'
+					+'<b class="ell" data-uid="'+ _d.empCode + '"  title="' + _d.name + '">' + _d.name + '</b>'
+					+'<b class="ell" title="' + _d.deptName + '">' + _d.deptName + '</b>'
+					+'<b class="ell" title="' + _d.email + '">' + _d.email + '</b>'			
+					+'<b class="ell"><u class="ico io_delete del_remail"></u></b>'			
+					+'</li>';
+			}			
+			sbox.html(_tex);
+			
+			this.bindEventOnDel();
+		},
+		
+		//生成已选列表,并填到box里
+		createEmailList : function($dom){
+			var arr = this.submitData, _htm = ''
+			for(var i=0, k=arr.length; i<k; i++){
+				var _d = arr[i],
+					_tex = _d.name ? _d.name + '<b class="fccc">&lt;'+ _d.email +'&gt;</b>' : _d.email;
+				_htm += '<div date-deptName="' + _d.deptName + '" data-name="' + _d.name + '" data-uid="'+ _d.empCode + '" data-email="' + _d.email + '"  class="list_cell" title="' +  _d.email + '">' + _tex + ';</div>'
+			}
+			$dom.before($(_htm));			
+			this.submitData = [];
+		},
+		
+		//获得出已经有的地址,封装成arrObj
+		getEmailOnbox : function($dom){
+			var doms = $dom.find('.list_cell'),
+				arr = [];
+			doms.each(function(i,d){
+				var _obj = {
+					name : d.getAttribute('data-name'),
+					empCode : d.getAttribute('data-uid'),
+					deptName : d.getAttribute('date-deptName'),
+					email : d.getAttribute('data-email'),
+				}
+				arr.push(_obj);
+			});
+			return arr;
+		},		
+		
+		//手动输入邮箱地址
+		activeOnEmailBox : function(boxClass){
+			boxClass = '.' + boxClass;	
+			
+			//点击box,定位到input
+			$(document).on('click', boxClass, function(){
+				$(this).find('.data_text').focus();
+			});
+			
+			//响应input上的键盘事件
+			$(document).on('keyup', '.data_text', function(e){
+				var _this = $(this),
+					_tebox = _this.next(),
+					_tex = _this.val(),
+					_parent = _this.parent();
+				_tebox.text(_tex);
+				_parent.width( _tebox.width() + 15);		
+				
+				var _cod = e.keyCode;		
+				if(_cod == 32 || _cod == 59 || _cod == 13) setNewMail(_this);
+			});
+			
+			//失去焦点就生成一个地址
+			$(document).on('blur', '.data_text', function(){
+				setNewMail($(this));
+			});
+			
+			//根据input里的值生成新的地址
+			function setNewMail(input){
+				var _parent = input.parent(),
+					_te = input.val(),					
+					_last = _te.slice(-1);
+				if(_last === ' ' || _last === ';') _te = _te.slice(0, _te.length -1);					
+				if(!_te) return false;   //如果是空的，就退出
+				
+				var _tex = '<div date-deptName="" data-name="" data-uid="" data-email="' + _te + '"  class="list_cell" title="' + _te + '">' + _te + ';</div>';				
+				var _tex1 = $(_tex);	
+				
+				checkTheMail(_te, _tex1);
+				_parent.before(_tex1); 
+				input.val('');   
+			}
+			
+			//双击地址列表时，移掉高亮，以便编辑
+			$(document).on('dblclick', '.list_cell', function () {
+				$(this).removeClass('activ_cell');
+				this.focus();
+				return false;
+			});
+			
+			//单击地址列表时，使其变为可编辑状态，并高亮显示
+			$(document).on('click', '.list_cell', function(){
+				$(this).siblings('.list_cell').removeClass('activ_cell');				
+				if(this.contentEditable !== 'true') $(this).addClass('activ_cell');
+				this.contentEditable = true;
+				this.focus();   //重新聚焦
+				return false;
+			});	
+			
+			//地址列表上的键盘事件
+			$(document).on('keydown', '.list_cell', function(e){				
+				var _cod = e.keyCode;				
+				if(_cod == 32 || _cod == 59 || _cod == 13){  //按相应键时退出
+					this.contentEditable = false;					
+					doTheMailCell($(this));					
+				}else if(_cod == 46 || _cod == 110){   //删除
+					$(this).remove();
+				}			
+			});		
+			
+			//地址列表失去焦点时关闭编辑状态
+			$(document).on('blur', '.list_cell', function(){
+				this.contentEditable = false;				
+				$(this).removeClass('activ_cell');
+				// console.log(22);
+				doTheMailCell($(this));
+			});	
+			
+			//每次在邮件地址上修改时都要作判断
+			function doTheMailCell(dom){
+				var _b = dom.find('b'),
+					_dom = _b[0] ? dom.find('b') : dom;
+					_tex = _dom.text();						
+					function removeLast(text){						
+						var tex = text.slice(-1);
+						if(tex === ' ' || tex === ';'){							
+							text = text.slice(0, text.length-1);							
+							arguments.callee(text);							
+							return text;
+						}					
+					}
+					_tex =  removeLast(_tex);	 //如果最后面有; 则删掉再作校验					
+				checkTheMail(_tex, dom);						
+			}
+			
+			//验证邮件的合法性,然后作出调整		
+			function checkTheMail(text, dom){
+				var strReg=/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/i;					
+				if(text.search(strReg) == -1){
+					dom.addClass('fcr');
+					dom[0].title = '邮箱格式错误,双击修改';
+				}else{
+					dom.removeClass('fcr');
+					dom[0].title = text;
+				}
+			}
+		},		
+		
+		//已选框中的删除
+		bindEventOnDel : function(){
+			var rbox = this.readybox, sbox = this.selectbox, that = this;
+			sbox.on('click', '.del_remail', function(){
+				var _id = $(this).parent().parent().find('b').eq(0)[0].getAttribute('data-uid');
+				$(this).parent().parent().remove();  //删掉
+				
+				var _bs = rbox.find('li').find('b:first');
+				_bs.each(function(i,d){   //如果符合就显示
+					if(d.getAttribute('data-uid') === _id) $(d).parent().show(50);  
+				});
+				that.removeObjById(_id);
+			});
+		},
+		
+		//根据所传id加上对像
+		addObjById : function(id){
+			var arr = this.readyDate;
+			for(var i=0, k=arr.length; i<k; i++){
+				if(arr[i].empCode === id){
+					this.submitData.push(arr[i]);
+					break;
+				}
+			}
+		},		
+		
+		//根据所传id移除对象
+		removeObjById : function(id){
+			var arr = this.submitData;
+			for(var i=0, k=arr.length; i<k; i++){
+				if(arr[i].empCode === id){
+					this.submitData.splice(i,1);
+					break;
+				}
+			}
+		},	
+		
+		//获取已选个数
+		getSelectedNum : function(){
+			return this.submitData.length;
+		}
+	}
+	
+	
+	/*******************
+	 *
+	 * class
+	 * form输入校验类
+	 * @param
+	 *
+	 *******************/
+	OP_Tools.inputVerify = function () {
+		this._box = null;
+		// this.creatErrorBox();
+	}
+
+	OP_Tools.inputVerify.prototype = {
+		//限制字符长度
+		checkLength : function (inputs, num) {
+			var that = this;
+			inputs.on('keyup afterpaste', function () {
+				var _len = this.value.length;
+				if (_len > num) {
+					this.value = this.value.substring(0, num);
+					that.showError(this, '长度不能超过' + num + '位');
+					return false;
+				} else {
+					that.hideError();
+				}
+			});
+		},
+		
+		//规定输入的内容
+		checkContent : function (inputs, type) {
+			var that = this;
+			inputs.on('keyup afterpaste', function () {
+				that.valueToType(this, type);
+			});
+			if(!type) inputs.off('keyup afterpaste');
+			
+			inputs.on('focus', function(){
+				$(this).removeClass('bor_red');
+			});
+		},
+		
+		//验证手机号
+		checkPhoneNum : function(inputs){
+			var that = this;
+			inputs.on('blur', function(){
+				var _val = $(this).val();
+				if(_val.length !== 11 ){
+					that.showError(this, '手机号应为11个数字');
+					$(this).addClass('bor_red');
+				}else if(!(_val.match(/^1[3|4|5|8][0-9]\d{4,8}$/))){
+					that.showError(this, '手机号不正确');
+					$(this).addClass('bor_red');
+				}
+			});
+			
+			inputs.on('focus', function(){
+				$(this).removeClass('bor_red');
+			});
+		},
+
+		//非空校验
+		dealWithEmptyDom : function (inputs, str) {
+			var that = this;
+			//值变更时判断
+			inputs.bind('keyup', function () {
+				_toInput(this);
+			});
+
+			//每次获得焦点都进行判断
+			inputs.bind('focus', function () {
+				inputs.each(function (i, d) {
+					_toInput(d);
+				})
+			});
+
+			//如果已经有值了，就还原
+			function _toInput(d) {
+				if (d.value !== '') {
+					$(d).removeClass('bor_red');
+					that.hideError();
+				}
+			}
+
+			//循环判断所有的input，找到为空的则加上class,然后退出
+			for (var i = 0, k = inputs.length; i < k; i++) {
+				var _inp = inputs[i],
+				_tex = _inp.value.replace(/(^\s*)|(\s*$)/g, ""),
+				_cls = _inp.className;
+				if (_tex === '') {
+					_inp.className = _cls + ' bor_red';
+					this.showError(_inp, str);
+					break;
+				}
+			}
+			if (i === k) return true;
+		},
+
+		//元素默认值的切换
+		toggleDefaultValue : function (input) {
+			var _te = input.val().replace(/(^\s*)|(\s*$)/g, ""),
+				_place = input.next(),
+				_box = input.parent();
+			!!_te ? _place.hide() : _place.show();
+			_box.click(function () {
+				input.focus();
+			});
+			input.keydown(function () {
+				_place.hide();
+			});
+			input.blur(function () {
+				var _te = $(this).val().replace(/(^\s*)|(\s*$)/g, ""),
+				_tex = _place.text();
+				if (_te === _tex || _te === '') {
+					$(this).val('');
+					_place.show();
+				}
+			});
+		},
+
+		//设置输入的内容
+		valueToType : function (input, type) {
+			var _val = input.value;
+			switch (type) {
+			case 'num': //数字
+				input.value = _val.replace(/\D/g, '');
+				if (_val.match(/\D/g)){
+					this.showError(input, '请输入数字');
+					$(this).addClass('bor_red');
+				}
+				break;
+			case 'en': //英文
+				input.value = _val.replace(/[^a-zA-Z]/g, '');
+				if (_val.match(/[^a-zA-Z]/g)){
+					this.showError(input, '请输入英文');
+					$(this).addClass('bor_red');
+				}
+				break;
+			case 'cn': //汉字
+				input.value = _val.replace(/[^\u4E00-\u9FA5]/g, '');
+				if (_val.match(/[^\u4E00-\u9FA5]/g)){
+					this.showError(input, '请输入汉字');
+					$(this).addClass('bor_red');
+				}
+				break;			
+			default:
+				return false;
+			}
+		},
+
+		//获取到目标元素的坐标
+		getThePosition : function (e) {
+			var x = e.offsetLeft,
+			y = e.offsetTop;
+			while (e.offsetParent && e.offsetParent.nodeName !== 'BODY') {
+				e = e.offsetParent;
+				if (e.style.position == 'fixed')
+					this.panel.style.position = "fixed";
+				x += e.offsetLeft;
+				y += e.offsetTop - e.scrollTop;
+			}
+			return {"x" : x,"y" : y};
+		},
+
+		//显示加载中画面
+		showLoading : function (num, text) {
+			this.creatLoadingBox(num, text);
+		},
+
+		//关闭加载中画面
+		closeLoading : function () {
+			document.getElementById('__loading_box').style.display = 'none';
+		},
+
+		//创建loading元素，并加到DOM树里
+		creatLoadingBox : function (num, text) {
+			var _dom = window.parent ? window.parent.document : document, //兼容iframe
+			_load = _dom.getElementById('__loading_box'),
+			num = num || 199,
+			text = text || '加载中，请稍后...';
+			if (!_load) {
+				_load = _dom.createElement('div'),
+				_tex = '<span class="load_infor">' + text + '</span>';
+				_load.id = '__loading_box';
+				_load.style.zIndex = num;
+				_load.innerHTML = _tex;
+				_dom.body.appendChild(_load);
+			} else {
+				_load.style.display = 'block';
+			}
+		},
+
+		//隐藏提示元素
+		hideError : function () {
+			$(this._box).fadeOut(400);
+		},
+
+		//显示提示元素
+		showError : function (dom, str) {
+			str = str || '此为必填项';
+			var that = this;
+			xy = this.getThePosition(dom),
+			_tex = str + '<i class="bor"><i></i></i>',
+			_dom = document,
+			_box = _dom.getElementById('__error_message');
+			if (!_box) {
+				_box = _dom.createElement('div');
+				_box.id = '__error_message';
+				_box.className = 'err_msg';
+				_dom.body.appendChild(_box);
+			}
+			_box.innerHTML = _tex;
+			_box.style.left = xy.x + "px";
+			_box.style.top = (xy.y - 32) + "px";
+			this._box = _box;
+			$(_box).stop(true, true).fadeIn(400).delay(1500).fadeOut(200);
+			// document.body.onclick = function () {
+				// that.hideError();
+			// }
+		}
+	}
+	
+});
+
+
+// 返回顶部
+(function gotoTop($d) {
+	$d.on('click', function () { //定义返回顶部点击向上滚动的动画
+		$('html,body').animate({
+			scrollTop : 0
+		}, 500);
+	})
+
+	//为窗口的scroll事件绑定处理函数
+	$(window).scroll(function () {
+		var s = $(window).scrollTop(); //获取窗口的滚动条的垂直位置
+		s > 100 ? $d.fadeIn(100) : $d.fadeOut(200);
+	});
+})($('#totop'));
+
+
+//元素智能fixed
+$.fn.smartFloat = function() { 
+	var position = function(element) { 
+		var top = element.position().top,  //记录元素到顶端的距离
+			pos = element.css("position"); //记录元素初始的position
+		$(window).scroll(function() { //侦听滚动时
+			var scrolls = $(this).scrollTop();
+			if (scrolls > top) {   //滚动一旦超出则悬浮			
+				element.css({                         
+					position: "fixed",                      
+					top: 0                 
+				}).addClass("shadow"); 					                          
+			}else {                 
+				element.css({     //没有超出，则用初始值
+					position: pos,                     
+					top: top                 
+				}).removeClass("shadow");          
+			}
+		});   
+	}; 	
+	return $(this).each(function() {	
+		position($(this));                              
+	});		
+};

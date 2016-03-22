@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>应用中心</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>内容展示</span>
+		</div>
+		
+		
+		<div class="appad p_rlt">		
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助来啦！</h3>
+					<p class="f18">HR自助系统已经入住统一应用管理平台</p>
+					<a href="#">从此处获取便捷方案</a>
+				</div>
+				<a href="#" class="leanmore fr"><span class="gtlt">&gt;&gt;</span>了解HR自助</a>
+			</div>
+		</div>	
+		
+		
+		<div class="border_b fix">
+			<div class="fr tosearch">
+				<input type="text" class="inp_tex sea_tool" placeholder="搜索应用" /><u class="ico io_search"></u>
+			</div>
+			
+			<menu class="c_menu fl">
+				<a href="#" class="on">全部应用</a>
+				<a href="">决策分析</a>
+				<a href="">办公协同</a>
+				<a href="#" class="">管理支撑</a>
+				<a href="">运营支撑</a>
+			</menu>			
+		</div>
+		
+		<div class="pb70">
+			<ul class="m_list fix">
+				<li>
+					<span class="ico ico_hr"></span>						
+					<div class="dib minfor_box">
+						<h3><a href="">HR自助</a></h3>
+						<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_logist"></span>						
+					<div class="dib minfor_box">
+						<h3><a href="">后勤自助</a></h3>
+						<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_money"></span>						
+					<div class="dib minfor_box">
+						<h3><a href="">财务自助</a></h3>
+						<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_finance"></span>						
+					<div class="dib minfor_box">
+						<h3><a href="">证照系统</a></h3>
+						<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_license"></span>						
+					<div class="dib minfor_box">
+						<h3><a href="">财务自助</a></h3>
+						<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/op_page.js"></script><script src="js/demo.js"></script>
+</body>
+</html>
+

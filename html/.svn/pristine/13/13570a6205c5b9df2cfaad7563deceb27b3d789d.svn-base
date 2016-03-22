@@ -1,0 +1,193 @@
+$(function(){
+	/*******************
+	 *
+	 * 首页交互
+	 *
+	 *******************/
+	//主菜单栏切换
+	var m_menus = $('#m_menu').find('a');
+		m_menus.on('click', function () {
+			m_menus.removeClass('on');
+			$(this).addClass('on');
+			// return false;
+		});
+
+	// 首页banner切换
+	var _ban = $('#banner'),
+		_bans = _ban.children('li'),
+		_tags = _ban.next().children('span'),
+		banm = new OP_Tools.TabAnimate(_bans, _tags);
+	banm.addMouseover();
+	banm.addInterval(4000);
+
+	// 首页应用说明切换
+	var _sum = $('#summary').children('li'),
+		_sumtabs = $('#sumtabs').children('li'),
+		summ = new OP_Tools.TabAnimate(_sum, _sumtabs);
+	summ.addMouseover();
+
+	// 首页APP列表切换
+	var _app = $('#appulbox').children('li'),
+		_apptabs = $('#apptabs').children('span'),
+		appm = new OP_Tools.TabAnimate(_app, _apptabs);
+	appm.addMouseover();
+	
+
+	/*******************
+	 *
+	 * tab菜单切换
+	 *
+	 *******************/
+	var btn_menu = $('.c_menu').find('a');
+	btn_menu.on('click', function () {
+		btn_menu.removeClass('on');
+		$(this).addClass('on');
+		// return false;
+	});
+	
+
+	/*******************
+	 *
+	 * 侧边栏tab切换
+	 *
+	 *******************/
+	var sid_menu = $('.sid_menu').children('li'),
+		sid_menu1 = $('.menu_child').find('li');	
+	//一级菜单 
+	sid_menu.on('click', function () {
+		var _ul = $(this).find('ul'),
+			_cls = _ul[0] ? 'ondown' : 'on';
+		_ul.toggle();		
+		sid_menu.find('b').removeClass('on ondown');
+		$(this).find('b').addClass(_cls);
+		sid_menu1.removeClass('on');		
+		return false;
+	});
+	
+	//二级菜单
+	sid_menu1.on('click', function () {
+		sid_menu.find('b').removeClass('on ondown');
+		sid_menu1.removeClass('on');
+		$(this).addClass('on');
+		return false;
+	});
+	
+	
+	/*******************
+	 *
+	 * 面板折叠
+	 *
+	 *******************/
+	 var bortab = $('h3>i');
+	 bortab.on('click',function(){
+		$(this).parent().next().toggle();	 
+	 });
+	 
+	
+
+	/*******************
+	 *
+	 * 表格编辑  for myApp
+	 *
+	 *******************/
+	var _addBtn = $('#addNewTr'),
+		_theTable = $('#applist').find('table');
+	_addBtn.click(function(){
+		var _trs = _theTable.find('tr:gt(0)'),
+			_tex = '<td><input type="text" /></td>'
+				  +'<td><input type="text" /></td>'
+				  +'<td><input type="text" /></td>'
+				  +'<td><input type="text" readonly="readonly" /><u class="ico io_select"></u></td>'
+				  +'<td>'
+					+'<u class="ico io_save"></u> '
+					+'<u class="ico io_delete"></u>'
+				  +'</td>';
+		_trs.each(function(i,d){
+			var _tds = $(d).find('td'),
+				_len = _tds.length;
+			if(!_tds[_len-1].innerHTML){
+				d.innerHTML = _tex
+				return false;
+			}
+		});		
+		return false;
+	});
+	
+	
+	/*******************
+	 *
+	 * 拉下列表交互 
+	 *
+	 *******************/	
+	$(document).on('click', '.io_select', function(e){
+		var _inp = $(this).prev()[0];	
+		showSelectList(_inp);
+		e.stopPropagation();
+	});		
+	function showSelectList(inptDom){
+		var _obj = {
+				text : '选项内容选项一',
+				code : '0'
+			},
+			_obj1 = {
+				text : '选项内容选项二',
+				code : '1'
+			},
+			_obj2 = {
+				text : '选项内容选项三',
+				code : '2'
+			},
+			_obj3 = {
+				text : '选项内容选项四',
+				code : '3'
+			};
+		var Arr = [_obj,_obj1,_obj2,_obj3,_obj,_obj1,_obj2,_obj3,_obj,_obj1,_obj2,_obj3],			
+			_func = function(o){   //点击完成后的回调
+				console.log(o);				
+			};
+		new OP_Tools.SelectList(inptDom, Arr).draw(_func);
+	}
+	
+	
+	/*******************
+	 *
+	 * 弹出层交互 
+	 *
+	*******************/	
+	//弹出层
+	$(document).on('click', '.io_seth', function(){		
+		// OP_Tools.popDom('#chooseApp', '.close');		
+	});
+	
+	//关闭	
+	$(document).on('click', '#submit_app_test', function(){
+		$(this).prev().click();
+		return false;
+	});	
+	
+	
+	$(document).on('click', '#showPerBox', function(){
+		$(this).parent().parent().next().show();
+	});
+	
+	//添加用户
+	$(document).on('click', '#addPerm', function(){
+		OP_Tools.popDom('#addPerm_box', '.close');
+	});
+	
+	
+	//删除
+	$(document).on('click', '.io_delete', function(){		
+		OP_Tools.popDom('#if_delTr_test', '.close');		
+	});
+	
+	
+	/*******************
+	 *
+	 * 元素固定在页面上
+	 *
+	*******************/	
+	$(".pos_fix").smartFloat(); 
+	
+	
+});

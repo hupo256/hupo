@@ -1,0 +1,160 @@
+var OP_Tools = window.ES_Tools = OP_Tools || {};
+$(function () {
+	/*******************
+	 *
+	 * tab切换类
+	 * @param  conArr  切换的内容列表
+	 *		   tabArr  切换的序号列表
+	 *
+	 *******************/
+	function TabAnimate(conArr, tabArr) {
+		this.con = conArr;
+		this.tab = tabArr;
+		this._index = null;
+	}
+
+	TabAnimate.prototype = {
+		displayer : function (type, callbacks) {
+			var _ind = this._index,
+			_con = this.con;
+			type = type || 'fade'
+				switch (type) {
+				case 'fade':
+					_con.eq(_ind).stop(true, true).fadeIn(400).siblings().fadeOut(200);
+					break;
+				case 'show':
+					_con.stop(true, true).hide().eq(_ind).show();
+					break;
+				}
+				this.tab.removeClass('on').eq(_ind).addClass('on');
+			if (callbacks)
+				callbacks(_con.eq(_ind));
+		},
+
+		addMouseover : function (type, callbacks) {
+			var _tabs = this.tab,
+			that = this;
+			_tabs.mouseover(function () {
+				that._index = _tabs.index(this);
+				that.displayer(type, callbacks);
+			});
+		},
+
+		addInterval : function (time, callbacks) {
+			var that = this,
+			_len = this.tab.length,
+			_intv = null;
+			this.con.parent().hover(function () {
+				clearInterval(_intv);
+			}, function () {
+				_intv = setInterval(function () {
+						that._index++;
+						if (_len === that._index)
+							that._index = 0;
+						that.displayer(false, callbacks);
+					}, time);
+			}).trigger('mouseleave');
+		}
+	}
+
+	/*******************
+	 *
+	 * 首面交互
+	 *
+	 *******************/
+	//主菜单栏切换
+	var m_menus = $('#m_menu').find('a');
+		m_menus.on('click', function () {
+			m_menus.removeClass('on');
+			$(this).addClass('on');
+			return false;
+		});
+
+	// 首页banner切换
+	var _ban = $('#banner'),
+		_bans = _ban.children('li'),
+		_tags = _ban.next().children('span'),
+		banm = new TabAnimate(_bans, _tags);
+	banm.addMouseover();
+	banm.addInterval(4000);
+
+	// 首页应用说明切换
+	var _sum = $('#summary').children('li'),
+		_sumtabs = $('#sumtabs').children('li'),
+		summ = new TabAnimate(_sum, _sumtabs);
+	summ.addMouseover();
+
+	// 首页APP列表切换
+	var _app = $('#appulbox').children('li'),
+		_apptabs = $('#apptabs').children('span'),
+		appm = new TabAnimate(_app, _apptabs);
+	appm.addMouseover();
+
+	// 返回顶部函数
+	function gotoTop($totop) {
+		$totop.on('click', function () { //定义返回顶部点击向上滚动的动画
+			$('html,body').animate({
+				scrollTop : 0
+			}, 500);
+		})
+
+		//为窗口的scroll事件绑定处理函数
+		$(window).scroll(function () {
+			var s = $(window).scrollTop(); //获取窗口的滚动条的垂直位置
+			s > 100 ? $totop.fadeIn(100) : $totop.fadeOut(200);
+		});
+	}
+	gotoTop($('#totop'));
+
+	/*******************
+	 *
+	 * 子页面tab切换
+	 *
+	 *******************/
+	var btn_menu = $('.c_menu').find('a');
+	btn_menu.on('click', function () {
+		btn_menu.removeClass('on');
+		$(this).addClass('on');
+		return false;
+	});
+
+	/*******************
+	 *
+	 * 侧边栏tab切换
+	 *
+	 *******************/
+	var sid_menu = $('.sid_menu').find('li');
+		sid_menu.on('click', function () {
+		sid_menu.removeClass('on');
+		$(this).addClass('on');
+		return false;
+	});
+
+	/*******************
+	 *
+	 * 表格编辑  for myApp
+	 *
+	 *******************/
+	var _addBtn = $('#addNewTr'),
+		_theTable = $('#addNewTr').find('table');
+	_addBtn.on('click', function(){
+		var _trs = _theTable.find('tr'),
+			_tex = '<td>102375</td>'
+				  +'<td>IT工程部</td>'
+				  +'<td>王阳</td>'
+				  +'<td>增删改查</td>'
+				  +'<td>'
+					+'<u class="ico io_edit"></u>'
+					+'<u class="ico io_delete"></u>'
+				  +'</td>';
+		_trs.each(function(i,d){
+			var _tds = $(d).find('td'),
+				_len = _tds.length;
+			if(!_tds[length-1].innerHTML){
+				d.innerHTML = _tex
+			}
+		});
+	});
+	
+
+});

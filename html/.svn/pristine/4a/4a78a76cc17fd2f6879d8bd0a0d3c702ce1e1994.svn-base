@@ -1,0 +1,7 @@
+﻿[
+{"id":null,"empCode":"12323","name":"王明","deptName":"IT开发部","mobile":"18818001280","email":"caozhengnan@deppon.com","isDelete":null,"createTime":null,"createOperatorId":null,"updateTime":null,"updateOperatorId":null},
+{"id":null,"empCode":"12345","name":"曹正楠","deptName":"ESB开发组","mobile":"1881834080","email":"caozhengnan@deppon.com","isDelete":null,"createTime":null,"createOperatorId":null,"updateTime":null,"updateOperatorId":null},
+{"id":null,"empCode":"12335","name":"南山玉","deptName":"EOS测试组","mobile":"14518002080","email":"caozhengnan@deppon.com","isDelete":null,"createTime":null,"createOperatorId":null,"updateTime":null,"updateOperatorId":null},
+{"id":null,"empCode":"12325","name":"欧阳正文","deptName":"平台开发组","mobile":"13618002080","email":"caozhengnan@deppon.com","isDelete":null,"createTime":null,"createOperatorId":null,"updateTime":null,"updateOperatorId":null},
+{"id":null,"empCode":"17845","name":"钟明明","deptName":"DPAP系统平台开发测试组","mobile":"15318002080","email":"caozhengnan@deppon.com","isDelete":null,"createTime":null,"createOperatorId":null,"updateTime":null,"updateOperatorId":null}
+]

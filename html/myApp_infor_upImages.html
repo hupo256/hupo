@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>基础信息编辑</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="js/fancybox/fcss.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<div class="tit_inforbox ptb30">
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助(HR)</h3>
+					<p>所属系统：职能营运系统</p>
+					<p>支持平台：IE6、IE7、IE8、IE9、IE10、firefox、chrome</p>
+				</div>
+			</div>
+		</div>		
+		
+		<section class="column pb70 pt30">
+			<div class="sidbar dib">
+				<ul class="sid_menu">
+					<li>
+						<b>应用信息</b>
+					</li>
+					<li>
+						<b class="on">服务管理</b>
+					</li>
+					<li>
+						<b>方法管理</b>
+					</li>					
+					<li>
+						<b class="">监控警告</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li>监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>					
+					<li>
+						<b>数据分析</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li >监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>
+					
+					<li class="border_none">
+						<b>用户授权</b>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="con_details dib">
+				<div class="border_b">
+					<b>应用信息</b>
+				</div>
+
+				
+				<ul class="inp_list inputBox">					
+					<li>
+						<label for="">应用图标：</label>
+						<span class="ico imgbox"><img src="" alt="" /></span>
+						<a href="#" class="btn" id="offCheckInput">上传图片</a>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>应用中文名称：</label>
+						<input type="text" class="inp_tex w330" />
+						
+						<span class="io_tips">
+							<b>
+								提示要输入的信息提示要输入的信息
+								<i class="bor"><i></i></i>
+							</b>
+						</span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>应用英文名称：</label>
+						<input type="text" class="inp_tex w330" />						
+						<span class="io_tips">
+							<b class="t_left">
+								提示要输入的信息提示要输入的信息
+								<i class="bor"><i></i></i>
+							</b>
+						</span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>应用编码：</label>
+						<input type="text" class="inp_tex w330" />						
+						<span class="io_tips">
+							<b>
+								提示要输入的信息提示要输入的信息
+								<i class="bor"><i></i></i>
+							</b>
+						</span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>应用状态：</label>
+						<input type="text" class="inp_tex w330" />
+						<span class="io_tips">
+							<b class="t_left">
+								提示要输入的信息提示要输入的信息
+								<i class="bor"><i></i></i>
+							</b>
+						</span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>单选框：</label>
+						<b class="pr15"><input type="radio" class="inp_rad" />是</b>
+						<b><input type="radio" class="inp_rad" />否</b>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>多选框：</label>
+						<b class="pr15"><input type="checkbox" class="vam"  />A</b>		
+						<b class="pr15"><input type="checkbox" class="vam" />B</b>
+						<b><input type="checkbox" class="vam" class="vam"  />C</b>						
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>所属分组：</label>
+						<input type="text" readonly class="inp_tex w330" /><u class="ico io_select"></u>				
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>系统负责人：</label>
+						<input type="text" class="inp_tex w330" /><u class="ico io_seth"></u>
+						<span class="fccc"><b class="ico f_verify io_tips"></b><b class="vam">提示要输入的信息</b></span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>版本负责人:</label>
+						<input type="text" class="inp_tex w330" /><u class="ico io_seth"></u>
+						<span class="fccc"><b class="ico f_verify io_tips"></b><b class="vam">提示要输入的信息</b></span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>系统主管部门：</label>
+						<input type="text" class="inp_tex w330" />
+						<span class="fccc"><b class="ico f_verify io_tips"></b><b class="vam">提示要输入的信息</b></span>
+					</li>
+					
+					<li>
+						<label for="">上下文关系图：</label>
+						<a href="#" class="btn" id="sub_form">上传</a>
+						
+						<div class="dib img_list">							 
+							<a href="images/banner2.jpg" rel="upimg" title="dgfhs dawf sdf">
+								<img src="images/banner2.jpg" alt="" />
+								<span class="io_mask"></span>
+							</a>
+							
+							<a href="images/banner3.jpg" rel="upimg" title="asdf sdfasdf">
+								<img src="images/banner3.jpg" alt="" />
+								<span class="io_mask"></span>
+							</a>
+							
+							<a href="images/icons.png" rel="upimg" title="asdfasd sdfasdfadsf">
+								<img src="images/icons.png" alt="" />
+								<span class="io_mask"></span>
+							</a>
+
+							<b class="tac">
+								<!-- <progress></progress> -->
+								图片正在上传 <br />
+								<i id="loading_num" class="fcg">50%</i>
+							</b>
+						</div>
+					</li>
+					
+					<li>
+						<label for="">前台访问地址：</label>
+						<input type="text" class="inp_tex w690" />
+					</li>
+					
+					<li>
+						<label for="">前台测试访问地址：</label>
+						<input type="text" class="inp_tex w690" />
+					</li>
+					
+					<li>
+						<label for="">后台测试访问地址</label>
+						<input type="text" class="inp_tex w690" />
+					</li>
+					
+					<li>
+						<label for="">后台测试访问地址</label>
+						<input type="text" class="inp_tex w690" />
+					</li>
+							
+					
+					
+					
+					<li>
+						<label for="" class="vat">服务器IP列表：</label>
+						<textarea class="w690 vam"></textarea>
+					</li>
+					
+					<li>
+						<label for="" class="vat">其他信息：</label>
+						<textarea class="w690 vam"></textarea>
+					</li>
+				</ul>
+				
+				<div class="btnbox pt30">
+					<a href="#" class="btn">提交</a>
+					<a href="#" class="btn">取消</a>
+				</div>
+			</div>
+		</section>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<!--  弹层 选择方法分类  -->
+<div class="popuptbox" id="chooseApp">
+	<div class="p10">
+		<h3 class="pop_tit border_b">
+			选择方法分类
+			<a href="#" class="ico io_close close fr"></a>
+		</h3>		
+				
+		<div class="tb_seachbox">
+			<input class="inp_tex sea_tool" type="text" placeholder="工号搜索"><u class="ico io_search"></u>			
+		</div>
+		
+		<div class="tablebox">
+			<table>
+				<tr class="bgc">
+					<th width="5%">选择</th>
+					<th width="20%">名称</th>
+					<th width="35%">说明</th>
+					<th width="40%">命名空间</th>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>					
+				</tr>
+				
+				<tr class="bgc">
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>	
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>					
+				</tr>
+				
+				<tr class="bgc">
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>	
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>					
+				</tr>
+				
+				<tr class="bgc">
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>	
+				</tr>
+			</table>
+			
+		</div>
+		
+		<div class="page">
+			<div class=" fr">
+				<input type="button" class="d_btn" value="首页" />
+				<input type="button" class="d_btn d_btn2" value="上一页" />
+				第<input type="text" class="page_num" value="1"/>页<span class="plr">|</span>共10页					
+				<input type="button" class="d_btn d_btn2" value="下一页" />
+				<input type="button" class="d_btn" value="尾页" />
+				<!-- 每页显示
+				<select>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="20">20</option>
+				</select>
+				行 -->
+			</div>
+		</div>
+			
+		<div class="">			
+			<!-- <button class="d_none close">click me</button> -->
+			<div class="d_none close">click me</div>
+			<a href="#" class="btn" id="submit_app_test">确定</a>
+		</div>
+		
+	</div>	
+</div>
+	
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/dialog-min.js"></script>
+<script src="js/fancybox/f-min.js"></script>
+<script src="js/fancybox/mousewhee.js"></script>
+<script src="js/op_page.js"></script>
+<script src="js/demo.js"></script>
+
+
+<script type="text/javascript">
+	//弹出层系列图片展示
+	$("a[rel=upimg]").fancybox({
+		'titlePosition'  :  'over'
+	});		
+</script>
+</body>
+</html>

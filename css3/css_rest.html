@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>css 的重置</title>
+<!-- <link rel="stylesheet" href="css/css.css" /> -->
+<!-- <script src="js/mootools-core-1.4.5-full-nocompat.js"></script> -->
+</head>
+<body>
+<div class="conbox">	
+	<div id="mapbox">
+		<p class="lineh">而这个高度由一个不占据任何空间的空格完成，方法即使设置<br />这是第二行</p><i></i>
+	</div>
+		
+	<!-- <div class="animate">
+		<div class="ani fl">click me please !</div>
+		<div class="ani2 fl">click me please !</div>		
+		<div><span id="hour"></span>时 <span id="mini"></span>分 <span id="sec"></span>秒</div>
+	</div> -->
+	
+	<!-- <div id="goods"></div> -->
+	
+	<div class="h35"></div>
+</div>
+
+<div class="footer">
+	<p>哪，这是一个footer,总是停留在浏览器的底部</p>
+	<ul>
+		<li>a</li>
+		<li>b</li>
+		<li>c</li>		
+	</ul>
+	
+	<ol>
+		<li></li>
+		<li></li>
+		<li></li>
+		<!--  -->
+	</ol>
+	
+	
+	
+	
+	<span id="creatS">click me</span>
+	<div id="sd21">
+		<select name="" id="selebox">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</div>
+	
+	<script type="text/javascript">
+		var _btn = document.getElementById('creatS');
+		_btn.onclick = function(e){
+			createSelect();
+			e.preventDefault();
+		}
+
+		function createSelect() {
+			var _box = document.getElementById('selebox'),
+				_tex = '<option value="a">a</option>'
+					+'<option value="b">b</option>'
+					+'<option value="c">c</option>';
+			_box.innerHTML = _tex;
+		}
+	</script>
+</div>
+
+
+
+</body>
+</html>
+

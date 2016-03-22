@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HR自助-api目录</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="">文档</a>
+				<a class="on" href="">应用中心</a>
+				<a href="">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="" class="fcg">登录</a><span>|</span><a href="" class="border_non">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="" class="tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<div class="tit_inforbox ptb30">
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助(HR)</h3>
+					<p>所属系统：职能营运系统</p>
+					<p>支持平台：IE6、IE7、IE8、IE9、IE10、firefox、chrome</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="border_b fix">
+			<div class="fr tosearch">
+				<input type="text" class="inp_tex sea_tool" placeholder="搜索应用" /><u class="ico io_search"></u>
+			</div>
+			
+			<menu class="fl c_menu">
+				<a href="">基本信息</a><span></span>
+				<a href="" class="on">API目录</a><span></span>
+				<a href="">API变更记录</a><span></span>				
+			</menu>			
+		</div>
+		
+		<div class="pb70">
+			<section class="pt30 infor_panel">
+				<h3 class="panel_tit">
+					<i class="bor"><i></i></i>
+					API列表					
+				</h3>
+				
+				<ul class="inf_list">
+					<li>
+						<span class="fccc fr">系统角色新增</span>
+						<div class="jur_mark dib m_open"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysRole </a>
+					</li>
+					<li>
+						<span class="fccc fr">WEB前端开发工具集</span>
+						<div class="jur_mark dib m_close"><span>不开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					</li>
+					<li>
+						<span class="fccc fr">应用备份</span>
+						<div class="jur_mark dib m_impower"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action</a>
+					</li>
+					<li>
+						<span class="fccc fr">系统角色新增</span>
+						<div class="jur_mark dib m_open"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysRole </a>
+					</li>
+					<li>
+						<span class="fccc fr">WEB前端开发工具集</span>
+						<div class="jur_mark dib m_close"><span>不开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					</li>
+					<li>
+						<span class="fccc fr">应用备份</span>
+						<div class="jur_mark dib m_impower"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action</a>
+					</li>
+				</ul>				
+			</section>
+			
+			<section class="pt30 infor_panel">
+				<h3 class="panel_tit">
+					<i class="bor"><i></i></i>
+					数据结构					
+				</h3>
+				
+				<ul class="inf_list">
+					<li>
+						<span class="fccc fr">系统角色新增</span>
+						<div class="jur_mark dib m_open"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysRole </a>
+					</li>
+					<li>
+						<span class="fccc fr">WEB前端开发工具集</span>
+						<div class="jur_mark dib m_close"><span>不开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					</li>
+					<li>
+						<span class="fccc fr">应用备份</span>
+						<div class="jur_mark dib m_impower"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action</a>
+					</li>
+					<li>
+						<span class="fccc fr">系统角色新增</span>
+						<div class="jur_mark dib m_open"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysRole </a>
+					</li>
+					<li>
+						<span class="fccc fr">WEB前端开发工具集</span>
+						<div class="jur_mark dib m_close"><span>不开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					</li>
+					<li>
+						<span class="fccc fr">应用备份</span>
+						<div class="jur_mark dib m_impower"><span>开放</span></div>
+						<a href="" class="fcb">com.deppon.foss.module.sysrole.server.action</a>
+					</li>
+				</ul>				
+			</section>
+		</div>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/op_page.js"></script>
+</body>
+</html>
+

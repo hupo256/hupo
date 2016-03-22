@@ -1,0 +1,154 @@
+@charset "utf-8";
+body,html{
+	font:14px/1.5 'Microsoft YaHei',Arial,Helvetica,sans-serif;
+	color:#555;
+	height:100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body,h1,h2,h3,h4,p,ul,ol,dl,dd{margin:0;}
+.d_none{display:none;}
+.pab{position:absolute;}
+.prt{position:relative;;}
+.wrapper,
+.poptips,
+.tvideo,
+.wrapper>section{
+	width:100%;
+	height:100%;
+	position:absolute;
+}
+
+.tips,
+.lhand,
+.rhand,
+.int_rst .btn{
+	background-image:url(../image/icons.png);
+	background-size:375px;
+	background-repeat:no-repeat;
+}
+.loading{
+	background:#2d2a3d;
+	z-index:4;
+	text-align:center;
+}
+.loading img{
+	width:30%;
+	margin-top:16rem;
+}
+
+/****  slpbox   ***/
+.slpbox{
+	background:url(../image/sleeping.jpg) 50% 100% no-repeat;
+	background-size:100%;
+}
+.poptips{background:rgba(0,0,0,.5);}
+.tips{
+	background-position:0 -92px;	
+	width:216px;
+	height:92px;
+	position:absolute;
+	left:65%;
+	top:50%;
+	margin-left:-108px;
+	-webkit-animation:toup 1.2s ease 0.1s infinite;
+}
+@-webkit-keyframes toup{
+	100%{
+		-webkit-transform:translateY(-50%);		
+	}	
+	
+}
+
+.tips2{-webkit-animation:toup2 2.5s ease 1;}
+@-webkit-keyframes toup2{	
+	100%{
+		-webkit-transform:translateY(-400%);
+		opacity:0;
+	}	
+}
+
+.int_rst{
+	background:url(../image/int_rst.jpg) 50% 100% no-repeat;
+	background-size:100%;	
+}
+.lhand,
+.rhand{
+	position:absolute;
+	bottom:15%;
+	height:90px;
+}
+.lhand{
+	width:84px;	
+	left:5%;
+	-webkit-transform-origin:0 3%;
+	transform-origin:0 3%;
+	-webkit-animation:toshake 1s ease 0.1s infinite;
+}
+.rhand{
+	width:130px;	
+	right:6%;
+	background-position:-90px 0;
+	-webkit-transform-origin:100% 3%;
+	transform-origin:100% 3%;
+	-webkit-animation:toshake 1s ease 0.1s infinite;
+}
+@-webkit-keyframes toshake{
+	0%, 100%{-webkit-transform:rotateZ(0);}
+	50%{-webkit-transform:rotateZ(4deg);}
+}
+
+.scorebox{
+	position:absolute;
+	left:50%;
+	top:21%;
+	margin-left:-90px;
+	width:180px;
+	height:81px;
+	background:url(../image/score.png) no-repeat;
+	background-size:208px;
+	background-position:50% 0;
+}
+.tryagain,
+.totaste{
+	position:absolute;	
+	top:70%;	
+	width:108px;
+	height:32px;
+	display:inline-block;
+}
+.tryagain{
+	left:15%;
+	background-position:0 -196px;
+}
+.totaste{	
+	right:15%;
+	background-position:-118px -196px;
+}
+/* .canvideo{
+	width:100%;
+	height:100%;
+} */
+
+
+/* iphone4\5\6 */
+@media only screen and (device-width:320px) {   
+	.wrapper> section{height:516.267px;} 	
+}
+@media only screen and (device-width:375px) { 
+	.wrapper> section{height:605px;} 	
+}
+@media only screen and (device-width:414px) {
+	.wrapper> section{
+		height:680px;
+		background-size:101.6%;
+	}
+}
+/* 以下是m2/m4  奇怪的是上面的语法 andriod不认识的 */
+@media only screen and (min-width: 325px) and (max-width: 360px){	
+	.wrapper> section{height:580.8px;}	
+	.wrapper>.videobox {	height:110%;}	
+}
+@media only screen and (min-width: 500px) and (max-width: 540px) { 
+	/* .wrapper > section{height:871.2px;}  */
+	.wrapper> section{height:667.92px;} 
+}

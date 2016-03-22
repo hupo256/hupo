@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap bgf0">
+	<div class="headline"></div>
+	<div class="loginbox">		
+		<span class="ico logo_t"></span>
+		
+		<ul class="loginputs" id="loginputs">
+			<li>
+				<label class="ico io_user"></label><input type="text" class="" placeholder="请输入工号" />
+				<span class="errorbox p_abs d_none"><span class="ico io_fales"></span>工号或密码错误</span>
+			</li>
+			
+			<li class="border_none">
+				<label class="ico io_pasw"></label><input type="password" class="" placeholder="请输入密码" /><u class="ico io_enter"></u>
+			</li>
+		</ul>
+		
+		<p class="logbtnbox">
+			<a href="#" class="fr btn log_btn">登录</a>
+			<b class="fccc">忘记密码了吗？点这里<a href="#" class="fcb">找回密码</a>。</b>
+		</p>
+	</div>
+	
+	<div class="h186"></div>
+</div>
+
+<!-- footer -->
+<footer  class="bgf0">
+	<div class="footer ptb70 tac">		
+		<a href="#" class="logo_l"></a>
+		<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+	</div>
+</footer>
+
+</body>
+</html>
+

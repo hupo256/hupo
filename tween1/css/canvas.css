@@ -1,0 +1,113 @@
+@charset "utf-8";
+/**********************
+
+green   #38a884
+green2  #43a487
+black   #8d8d8d
+yellow  #ff6000
+
+**********************/
+/* body{-webkit-tap-highlight-color: rgba(0,0,0,0);} */
+body,html{
+	height:100%;
+	width:100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+body,input{
+	font:0.875rem/1.6 "Microsoft YaHei","Arial","Helvetica";
+	margin:0;
+}
+body,h1,h2,h3,h4,p,ul,ol,dl,dd{margin:0;}
+ul{padding-left:0;list-style:none;}
+/*image with no-border*/
+a{text-decoration:none;}
+.tac{text-align:center;}
+.dib{display:inline-block;}
+.d_none{display:none;}
+
+/***** loadingbox  *****/
+.loadingbox{
+	height:100%;
+	background:#accfd4;
+}
+.probox{padding:0 5em;}
+/***** outWrap  *****/
+.outWrap{	
+	height:100%;	
+	position:relative;
+	overflow:hidden;
+	background:#accfd4;
+}
+.animbox,
+.coverlaye{
+	width:100%;
+	height:700%;
+	position:absolute;	
+}
+.animbox>section,
+.coverlaye>section{
+	height:14.2857%;
+	
+	/* border:1px solid #fff;
+	box-sizing:border-box; */
+}
+
+.coverlaye>section{
+	background:rgba(0,0,0,.0);
+	font-size:0;
+}
+.img80{width:75%;}
+
+.sens1_2{
+	position:relative;
+	width:40%;
+	margin:-32% 0 -21% 47%;
+}
+
+
+/* .img80{width:282px;}
+
+.sens1_2{
+	position:relative;
+	width:150px;
+	margin:-32% 0 -21% 47%;
+} */
+
+/*   texbox    */
+.texbox{
+	-webkit-transition:all 0.6s ease;
+	padding:2em;
+}
+.texbox p{	
+	color:#fff;
+	text-shadow:-1px -1px 1px #444, 1px 1px 1px #444, 0 0 2px #000;
+	/* opacity:0; */
+	/* -webkit-transform:rotateZ(10deg); */
+	-webkit-transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.texbox p:nth-child(1){-webkit-transition-delay:0.6s;}
+.texbox p:nth-child(2){-webkit-transition-delay:1.0s;}
+.texbox p:nth-child(3){-webkit-transition-delay:1.4s;}
+.texbox p:nth-child(4){-webkit-transition-delay:1.8s;}
+.texbox p:nth-child(5){-webkit-transition-delay:2.2s;}
+
+.toup{
+	transform:translateY(-15px);
+}
+.todown{
+	transform:translateY(15px);
+}
+
+.animtimg{
+	width:200px;
+	margin:50px;
+	display:inline-block;
+}
+
+.toshake{-webkit-animation:toShake 0.6s linear infinite;}
+@keyframes toShake{
+	0%,100%{-webkit-transform:translateY(0px);}
+	50%{-webkit-transform:translateY(2px);}
+}
+
+

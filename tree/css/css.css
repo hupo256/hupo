@@ -1,0 +1,53 @@
+@charset "utf-8";
+html{font-size:100%;}
+html,body{	
+	color:#595959;
+	height:100%;	
+}
+body, body p, input{font:14px/1.6 'Microsoft YaHei',Arial,Helvetica,sans-serif;}
+body,h1,h3,h4,p,ul,ol,dl,dd{	margin:0;}
+ul{list-style:none;padding-left:0;}
+a{color:#38a884; text-decoration:none;}
+.tac{text-align:center;}
+.fcr{color:#fb6c50;}
+.fr{float:right;}
+.fl{float:left;}
+.f16{font-size:16px;}
+.dib{display:inline-block;}
+.d_none{display:none;}
+.btn{	
+	background:#fb6c50;
+	color:#fff600;
+	text-decoration:none;
+	border-radius:5px;	
+	margin-top:10px;
+	display:block;
+	text-align:center;	padding:0;	
+	font:800 16px/38px 'Microsoft YaHei',Arial,Helvetica,sans-serif;
+	border-bottom:3px solid #d84c30;	
+}
+
+/****   wrapper   ***/
+.wrapper {	
+	width:100%;	
+	background:url(../image/redbox_bg.jpg) 50% 0 no-repeat;
+}
+#strode_path {
+	stroke-dasharray:5000;
+	stroke-dashoffset:5000;
+	animation:dash 6s linear infinite;
+}
+
+@keyframes dash {
+	to{stroke-dashoffset:0;}
+}
+
+
+
+
+
+
+
+
+
+

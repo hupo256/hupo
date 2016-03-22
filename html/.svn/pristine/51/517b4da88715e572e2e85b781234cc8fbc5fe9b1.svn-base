@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数据分析-展示</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<div class="tit_inforbox ptb30">
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助(HR)</h3>
+					<p>所属系统：职能营运系统</p>
+					<p>支持平台：IE6、IE7、IE8、IE9、IE10、firefox、chrome</p>
+				</div>
+			</div>
+		</div>
+		
+		<section class="column pb70">
+			<div class="sidbar dib">
+				<ul class="sid_menu">
+					<li>
+						<b>应用信息</b>
+					</li>
+					<li>
+						<b class="on">服务管理</b>
+					</li>
+					<li>
+						<b>方法管理</b>
+					</li>					
+					<li>
+						<b class="">监控警告</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li>监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>					
+					<li>
+						<b>数据分析</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li >监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>
+					
+					<li class="border_none">
+						<b>用户授权</b>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="con_details fr">
+				<div class="border_b">
+					<b>应用信息</b>
+				</div>
+				
+				<section class="pt30 infor_panel">
+					<h3 class="panel_tit">
+						<i class="bor"><i></i></i>
+						请求统计分析					
+					</h3>
+					
+					<ul class="input_list">
+						<!-- <li class="fr"> -->
+							<a href="" class="d_btn fr">搜索</a>
+						<!-- </li> -->
+						
+						<li>
+							<label>时间范围</label>
+							<input class="inp_tex w100" type="text">
+							-
+							<input class="inp_tex w100" type="text">						
+						</li>
+						
+						<li>
+							<label>请求名称</label>
+							<input class="inp_tex w140" type="text"><u class="ico io_select"></u>												
+						</li>
+						
+						<li>
+							<label>请求全称</label>
+							<input class="inp_tex w100" type="text">												
+						</li>
+					</ul>
+					
+					<div class="pb70">
+						<table>
+							<tr class="bgc">
+								<th width="13%">请求名称</th>
+								<th width="15%">请求全称</th>
+								<th width="12%">
+									<div class="p_rlt">
+										访问次数
+										<span class="p_abs rankbox">
+											<a href="#" class="a_up"></a>
+											<a href="#" class="a_down"></a>
+										</span>
+									</div>
+								</th>
+								<th width="15%">
+									<div class="p_rlt">
+										平均响应时间
+										<span class="p_abs rankbox">
+											<a href="#" class="a_up"></a>
+											<a href="#" class="a_down"></a>
+										</span>
+									</div>
+								</th>
+								<th width="15%">
+									<div class="p_rlt">
+										最大响应时间
+										<span class="p_abs rankbox">
+											<a href="#" class="a_up"></a>
+											<a href="#" class="a_down"></a>
+										</span>
+									</div>
+								</th>
+								<th width="15%">
+									<div class="p_rlt">
+										最大响应时间
+										<span class="p_abs rankbox">
+											<a href="#" class="a_up"></a>
+											<a href="#" class="a_down"></a>
+										</span>
+									</div>
+								</th>							
+								<th width="8%">失败率</th>
+								<th width="7%">详细</th>
+							</tr>
+							
+							<tr>
+								<td>名称</td>
+								<td>名称</td>
+								<td>1254</td>
+								<td>10s</td>
+								<td>25s</td>
+								<td>6s</td>
+								<td>2%</td>
+								<td>
+									<u class="ico io_detail"></u>
+								</td>
+							</tr>
+							
+							<tr class="bgc">
+								<td>名称</td>
+								<td>名称</td>
+								<td>1254</td>
+								<td>10s</td>
+								<td>25s</td>
+								<td>6s</td>
+								<td>2%</td>
+								<td>
+									<u class="ico io_detail"></u>
+								</td>
+							</tr>
+							
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+							<tr class="bgc">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+							<tr class="bgc">
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							
+							
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>		
+
+						</table>
+					
+					
+						<div class="page fr ptb30">
+							<input type="button" class="d_btn" value="首页" />
+							<input type="button" class="d_btn d_btn2" value="上一页" />
+							第<input type="text" class="page_num" value="1"/>页<span class="plr">|</span>共10页					
+							<input type="button" class="d_btn d_btn2" value="下一页" />
+							<input type="button" class="d_btn" value="尾页" />
+							每页显示
+							<select>
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+							</select>
+							行
+						</div>
+					</div>
+				</section>
+			
+			</div>
+		</section>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/op_page.js"></script><script src="js/demo.js"></script>
+</body>
+</html>
+

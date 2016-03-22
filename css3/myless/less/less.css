@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@color: #333;
+.p15(){
+	padding:15px;
+}
+
+.background-gradient (@start: #000) {
+	background: @start;
+	background: -moz-linear-gradient(top,  @start 0%, darken(@start,10%) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,darken(@start,10%)));
+	background: -webkit-linear-gradient(top,  @start 0%,darken(@start,10%) 100%);
+	background: -o-linear-gradient(top,  @start 0%,darken(@start,10%) 100%);
+	background: -ms-linear-gradient(top,  @start 0%,darken(@start,10%) 100%);
+	background: linear-gradient(to bottom,  @start 0%,darken(@start,10%) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@start, endColorstr=darken(@start,10%),GradientType=0 );
+}
+
+/* CSS Document */
+.fcr {	
+	color: @color;
+}
+.p15{
+	.p15();
+}

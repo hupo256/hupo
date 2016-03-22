@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width">
+<meta name="format-detection" content="telephone=no, email=no" />  <!-- 禁止数字识自动别为电话号码 -->
+<link rel="stylesheet" href="css/weicon.css?plmk-333" />
+<title>有你槑我</title> 
+<body>
+<!-- loading -->
+<section class="loading pab">
+	<div class="logobox"></div>
+	<div class="starbox"></div>
+	<div class="starbox2"></div>
+</section>
+
+<div class="outWrap pbox">
+	<!-- p1 -->
+	<section class="sec1">
+		<a href="#" class="btn begain">开始测试</a>
+		<a href="#" class="ruler">活动规则</a>
+		
+		<div class="poppupbox d_none">
+			<div class="introduce">
+				<h3>活动规则</h3>
+				<p><b>活动时间：</b>2015年6月18日-6月27日</p>
+				<p><b>参与方式：</b>于活动期间进入卫康微信公众号 “<span class="fcy">上海卫康</span>”活动页面参与活动按照提示完成游戏，即有机会获得相关奖项。未中奖的用户可以通过将游戏分享至朋友圈额外获得一次游戏机会。</p>
+				<p><b>奖项设置：</b>卫康槑瞳系列彩色隐形眼镜一副（<span class="fcy">共1000份，每个微信号限领一份</span>）活动奖品将于活动结束后统一发货，获奖者可以通过卫康微信平台或客服电话<span class="fcy">4009209198</span>，查询发货进度。
+</p>
+				<p><b>领奖须知：</b><br />
+				<span class="fcy">1.</span>本活动奖项不得转换、转让或折换现金。<br />
+				<span class="fcy">2.</span>对于获奖用户在参与本活动、领取奖品过程中发生的任何伤害和损失，如该等伤害和损失非由主办方之过错导致，主办方不承担任何责任。<br />
+				<span class="fcy">3.</span>如果发现有活动参与者使用任何不正当手段参加本活动，包括但不限于以下情况，活动主办方有权在不事先通知的前提下取消其参加活动的资格和获奖资格：<br />
+				<p><span class="fcy">(1)</span>任何有违本活动目的和宗旨；
+				<span class="fcy">(2)</span>遵守本活动规则；<span class="fcy">(3)</span>影响活动正常有序进行；<span class="fcy">(4)</span>损害活动主办方及相关实体的合法权益和声誉；
+<span class="fcy">(5)</span>在活动参与过程中提供非真实的数据或信息；<span class="fcy">(6)</span>以不正当、不公平或作弊等带有欺骗性质的手段参与活动；<span class="fcy">(7)</span>在参与活动过程中利用多个不同账户在本活动期间进行多次数或多账户的提交行为或其他虚假行为，或者在参与活动过程中进行非法行为。<span class="fcy">(8)</span>活动主办方有证据认为的其他不正当手段或情形。</p>
+			</div>
+		</div>
+		
+	</section>
+	
+	<!-- p2 -->
+	<section class="sec2" data-game="1">
+		<div class="pab imgchoose">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	
+		<a href="#" class="btn_next"></a>
+	</section>
+	
+	<!-- p3 -->
+	<section class="sec3" data-game="2">
+		<div class="canbox pab">
+			<canvas class="canvas" id="canvas" width="200" height="200"></canvas>
+			<img class="pab" src="image/dai.png" width="12px" height="12px" alt="" />
+		</div>
+		
+		<div class="spanbox pab" id="spanbox">
+			<span data-code="37"></span>
+			<span data-code="38"></span>
+			<span data-code="39"></span>
+			<span data-code="40"></span>		
+		</div>	
+		
+		<div class="poppupbox d_none">
+			<div class="icon_wc migon"></div>
+		</div>
+	</section>
+	
+	<!-- p4 -->
+	<section class="sec4" data-game="3">
+		<div class="pab upimgbox">
+			<input type="file" capture="camera" accept="image/*" >
+			
+			<div id="imgbox" class="imgbox">
+				<img src="" alt="" />
+			</div>
+		</div>
+		
+		<a href="#" class="pab upimgbtn"></a>
+	</section>
+	
+	<!-- p5 -->
+	<section class="sec5" data-game="4">
+		<div class="maskbox pab">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		
+		<div class="mikephone pab"><span></span></div>
+	
+		<div class="poppupbox d_none">
+			<div class="icon_wc fenbei"></div>
+		</div>
+	</section>	
+	
+	<!-- p6 -->
+	<section class="sec6" data-result="1">	
+	</section>
+	
+	<!-- p7 -->
+	<section class="sec7" data-result="2">	
+	</section>
+	
+	<!-- p8 -->
+	<section class="sec8" data-result="3">	
+	</section>
+	
+	<!-- p9 -->
+	<section class="sec9" data-win="4">	
+	</section>
+	
+	<!-- p10 -->
+	<section class="sec10">
+		<img src="image/weicon.png" alt="" class="pab" id="markimg" width="1" height="1" />
+		<script>
+			//即时清除掉loading层
+			var img = document.getElementById('markimg');
+			if (img.complete) {
+				hideLoad();
+			} else {
+				img.onload = function(){
+					img.onload = null;
+					hideLoad();
+				}
+			};			
+			function hideLoad(){
+				var load = document.querySelectorAll('.loading')[0],
+					cls = load.className;
+				load.className = cls + ' d_none';
+			}
+		</script>
+		<div class="userform">
+			<span class="weicon"></span>
+			<p>请完整填写真实信息，以便槑瞳顺利送达<br />如果地址不正确，将无法正常发货哟</p>
+			<ul class="inpbox">
+				<li>
+					<input type="text" class="inp_tex" placeholder="姓名" />
+				</li>
+				
+				<li>
+					<input type="text" class="inp_tex" placeholder="手机" />
+				</li>
+				
+				<li>
+					<input type="text" class="inp_tex" placeholder="收件地址" />
+				</li>
+				
+				<li>
+					<input type="number" class="inp_tex wp50"  min="0" max="900" placeholder="左眼度数" />
+					<input type="number" class="inp_tex wp50" min="0" max="900" placeholder="右眼度数" />
+				</li>
+			</ul>
+			
+			<p>选择一款心仪的槑瞳吧（点击图片可查看）</p>
+			
+			<div class="prodbox">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			
+			<ul class="colorbox">
+				<li>
+					<p><input type="checkbox" /> <lable>黑色</lable> </p>
+					<p><input type="checkbox" /> <lable>棕色</lable></p>
+				</li>
+				
+				<li>
+					<p><input type="checkbox" /> <lable>黑色</lable></p> 
+					<p><input type="checkbox" /> <lable>巧克力色</lable></p>
+				</li>
+				
+				<li>
+					<p><input type="checkbox" /> <lable>黑色</lable></p>
+					<p><input type="checkbox" /> <lable>棕色</lable></p>
+				</li>
+			</ul>
+			
+			<p class="tac pt1">
+				<a href="#" class="btn_submit">提交</a>
+			</p>
+			
+			<div class="poppupbox d_none">
+				<div class="inforbox succeed">
+					<span class="close"></span>
+					<p>信息提交成功！我们会在试用活动结束后统一发货，您可以通过卫康微信平台或客服电话4009209198，查询发货进度。</p>
+					
+					<p class="tac pt1">
+						<a href="#" class="btn_shale">分享给好友</a>
+					</p>
+				</div>
+			</div>
+			
+			<div class="poppupbox d_none">
+				<div class="inforbox fail">
+					<span class="close"></span>
+					<p>请完整填写信息如果信息不完整将无法正常发货哟</p>				
+				</div>
+			</div>			
+			
+			<div class="poppupbox d_none">
+				<div class="prod_show p_yellow"></div>
+			</div>
+			
+			<div class="poppupbox d_none">
+				<div class="prod_show p_red"></div>
+			</div>
+			
+			<div class="poppupbox d_none">
+				<div class="prod_show p_black"></div>
+			</div>
+		</div>
+	</section>
+	
+	
+	<div class="poppupbox d_none">
+		<div class="shaleout pab"></div>
+	</div>
+	
+	<div class="poppupbox d_none">
+		<div class="shaleout1 pab"></div>
+	</div>
+	
+	<div class="poppupbox d_none">
+		<div class="second pab"></div>
+	</div>
+		
+	<div class="poppupbox d_none">
+		<div class="attention pab">
+			<img src="image/qcode.png" alt="" />
+		</div>
+	</div>
+	
+	<div class="poppupbox d_none">
+		<div class="getgoal pab"></div>
+	</div>
+	
+	<div class="poppupbox d_none">
+		<div class="second_non pab"></div>
+	</div>
+	
+	<div class="poppupbox d_none">
+		<div class="popcon tips">
+			<p>看在你这么<img src="image/meimg.png" alt="" />的份上，我们决定再给你一次机会！<br />关注“<span class="fcr">上海卫康</span>”公众号回复“我要更槑”就能在玩一次啦！骚年，把握机会吧！</p>
+		</div>
+	</div>
+</div>
+
+	
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script src="js/zepto.min.js"></script>
+<script src="js/page.js?oiklm-678"></script>
+</body> 
+</html> 

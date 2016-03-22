@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HTML5</title>
+<link rel="stylesheet" href="css/css.css" />
+</head>
+
+<body>
+
+<p id="demo">点击这个按钮，获得您的位置：</p>
+<button onclick="getLocation()">试一下</button>
+<div id="mapholder"></div>
+
+
+<svg height="190">
+	<polygon points="100,10 40,180 190,60 10,60 160,180" style="fill:#f5f5f5;stroke:#ccc;stroke-width:1;fill-rule:evenodd;" />  
+</svg>
+	
+<canvas id="myCanvas" width="200" height="100"></canvas>	
+<script type="text/javascript">
+	var c=document.getElementById("myCanvas");
+	var cxt=c.getContext("2d");
+	cxt.fillStyle="#16a";
+	cxt.fillRect(12,4,180,50);
+</script>
+
+<p>Webpage: <input type="url" list="url_list" name="link" /></p>
+<datalist id="url_list">
+	<option label="W3School" value="http://www.W3School.com.cn" />
+	<option label="Google 23423" value="http://www.google.com" />
+	<option label="Microsoft" value="http://www.microsoft.com" />
+</datalist>
+<br /><br />
+
+<p>计数: </p>
+<div id="result"></div>
+<button onclick="startWorker()">开始 Worker</button> 
+<button onclick="stopWorker()">停止 Worker</button>
+<br /><br />
+
+<script>
+var w;
+function startWorker() {
+	if (typeof(Worker) !== "undefined") {
+		if (typeof(w) == "undefined") {
+			w = new Worker("demo_workers.js");
+		}
+		w.onmessage = function (event) {
+			//document.getElementById("result").innerHTML = event.data;
+			var _w = document.getElementById("result").style.width;
+			console.log(_w = parseFloat(_w));
+			if( parseFloat(_w) < 10 || !parseFloat(_w)){
+				document.getElementById("result").style.width = event.data + '%';
+			}else{
+				w.terminate();
+			}
+		};
+	} else {
+		document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+	}
+}
+
+function stopWorker(){ 
+	w.terminate();
+}
+</script>
+
+
+<form action="demo_form.asp" method="get" autocomplete="on">
+First name: <input type="text" name="fname" /><br />
+Last name: <input type="text" name="lname" /><br />
+E-mail: <input type="email" name="email" autocomplete="off" /><br />
+<input type="search" name="user_search"  placeholder="Search W3School" />
+<input type="text" placeholder="this is the day" />
+<input type="submit" draggable="true" ondragstart="drag(event)"/>
+</form>
+
+
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+<!-- <div ondragstart="drag(event)" id="pwoeri"></div> -->
+
+<img src="image/firebug.png"  ondragstart="drag(event)" id="drag1" />	
+<img src="image/loading.gif"  ondragstart="drag(event)" id="dra" />	
+<!-- <img src='image/mapinfop.png' ondragstart="drag(event)" /> -->
+<span ondragstart="drag(event)" draggable="true" id="wer">span</span>
+<div ondragstart="drag(event)" draggable="true" id="pwoeri">div opiwer</div>
+
+<script>
+//拖动操作
+function allowDrop(ev){
+	ev.preventDefault();
+}
+
+function drag(ev){
+	ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev){
+	ev.preventDefault();
+	var data=ev.dataTransfer.getData("Text");
+	ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+
+<script src="js/js.js"></script>
+</body>
+</html>

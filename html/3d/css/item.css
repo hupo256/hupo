@@ -1,0 +1,122 @@
+@charset "utf-8";
+body,html{
+	/* font:12px/1.6 "微软雅黑", "宋体", "黑体";	 */
+	color:#333;
+	height:100%;
+}
+body,h1,h3,h4,p,ul,ol,dl,dd{
+	margin:0;
+}
+.d_none{display:none;}
+.wrapper {	
+	width:100%;
+	height:100%;	
+	overflow:hidden;
+
+	/* width:240px;
+	height:300px;
+	margin:10px auto;	 */
+}	
+.item {
+	width:100%;
+	height:100%;
+	-webkit-transform-style: preserve-3d;	
+	-webkit-transition:all .6s ease;	 
+	/* -webkit-transition:all .6s cubic-bezier(0.175, 0.885, 0.32, 1.10);	 /* 回弹 */ 
+	/* -webkit-transition:all .4s cubic-bezier(0.68, -0.55, 0.265, 1.55);	 */
+	/* -webkit-transition:all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);	 */
+	/* -webkit-transition:all .4s  cubic-bezier(0.755, 0.05, 0.855, 0.06);	 */
+}
+
+.item section{	
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	
+	text-align:center;
+	color:#fff;
+}
+.item section:nth-child(1){background:#234a6c;}
+.item section:nth-child(2){background:#026006;}
+.item section:nth-child(3){background:#aaa5da;}
+.item section:nth-child(4){background:#60b5fd;}
+.item section:nth-child(5){background:#234a6c;}
+.item section:nth-child(6){background:#022542;}
+.item section:nth-child(7){background:#760404;}
+.item section:nth-child(8){background:#252358;}
+
+.ami{
+	width:100px;
+	height:100px;
+	background:#fff;
+	
+	position:absolute;
+	left:0;
+	top:0;
+}
+
+/*  loading  */
+.loading{
+	position:fixed;
+	top:0;
+	left:0;	
+	width:100%;
+	height:100%;
+	background:#38a884;
+	z-index:4;
+	text-align:center;
+}
+.loading img{
+	width:100px;
+	padding-top:45%;	
+}
+
+
+/***   发散    ***/
+.tplay{
+	background:#f8f8f8;
+	color:#333;
+	padding:10px 25px;
+	font-size:1em;
+	border:none;
+	position:relative;
+	z-index:3;
+}
+#screen_2 {
+	position: relative;
+	width: 100%;
+	height: 100%;	
+	overflow: hidden;
+}
+#screen_2 .ctn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -77px;
+	margin-top: -210px;
+	width:200px; 
+	height:420px;
+	/* -webkit-transform-style:preserve-3d; */
+}
+#screen_2 .ctn div {
+	position:absolute;
+	background: url(../image/redpage.png) no-repeat;
+	-webkit-transition: 1000ms all ease;
+	/* -webkit-transition:all .6s cubic-bezier(0.175, 0.885, 0.32, 1.10);	 /* 回弹 */ */
+	/* -webkit-transition:all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);	 */
+	/* -webkit-transition:all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);	 */
+	/* -webkit-transition:all .4s  cubic-bezier(0.755, 0.05, 0.855, 0.06);	 */
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>联系人编辑</title>
+<link rel="stylesheet" href="css/base.css" />
+<link rel="stylesheet" href="js/fancybox/fcss.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<div class="tit_inforbox ptb30">
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助(HR)</h3>
+					<p>所属系统：职能营运系统</p>
+					<p>支持平台：IE6、IE7、IE8、IE9、IE10、firefox、chrome</p>
+				</div>
+			</div>
+		</div>		
+		
+		<section class="column pb70 pt30">
+			<div class="sidbar dib">
+				<ul class="sid_menu">
+					<li>
+						<b>应用信息</b>
+					</li>
+					<li>
+						<b class="on">服务管理</b>
+					</li>
+					<li>
+						<b>方法管理</b>
+					</li>					
+					<li>
+						<b class="">监控警告</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li>监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>					
+					<li>
+						<b>数据分析</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li >监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>
+					
+					<li class="border_none">
+						<b>用户授权</b>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="con_details dib">
+				<div class="border_b">
+					<a class="goback fcb" href="#">
+						<span class="gtlt">&lt;</span>
+						返回  请求统计分析
+					</a>	
+				</div>
+
+				<section class="pt30 infor_panel">
+					<h3 class="panel_tit">
+						<i class="bor"><i></i></i>
+						添加分组					
+					</h3>
+					
+					<ul class="inp_list mail_edit">
+						<li>
+							<label>群组名称：</label>
+							<input type="text" class="inp_tex w330" />
+						</li>
+						
+						<li>
+							<label><span class="receiver d_btn">收件人</span></label>
+							<div class="data_box w690">
+									<!-- <div class="list_cell">snowdown@qq.com;</div> -->								
+									<!-- <div class="list_cell fcr activ_cell">
+										snowdown@qq.com;									
+										<input type="text" class="listen_cell" />
+									</div>	 -->							
+									<!-- <div class="list_cell fcr">胡三皮;</div>
+									<div class="list_cell">snowdown@qq.com;</div> -->
+									
+									
+									
+									
+									<div class="dt_box dib">
+										<input class="data_text" type="text" />
+										<div class="hide_info">WW</div>
+									</div>
+							</div>	
+						</li>
+						
+						<li>
+							<label><span class="copy_to d_btn">抄&nbsp;&nbsp;&nbsp;送</span></label>
+							<div class="data_box w690">
+							
+							</div>							
+						</li>
+						
+						<li>
+							<label for="">手机号列表：</label>
+							<input type="text" class="inp_tex w690" />					
+						</li>
+						
+						<li>
+							<label for="">服务应用场景：</label>
+							<textarea class="w690 vam"></textarea>					
+						</li>
+					</ul>
+				
+					<div class="btnbox pt30">
+						<a href="#" class="btn">取消</a>
+						<a href="#" class="btn">提交</a>
+					</div>
+				
+				</section>
+			</div>
+		</section>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<!--  弹层 选择方法分类  -->
+<div class="popuptbox" id="staffSelect">
+	<div class="p10">
+		<h3 class="pop_tit border_b">
+			选择联系人
+			<a href="#" class="ico io_close close fr"></a>
+		</h3>	
+		
+		<ul class="pop_slebox fix">			
+			<li class="servebox">
+				<input class="inp_tex" type="text" placeholder="输入姓名/工号/邮件地址"><u class="ico io_search"></u>			
+				<table>
+					<tr class="bgc">
+						<th width="20%">姓名</th>
+						<th width="30%">部门</th>
+						<th width="50%">邮箱地址</th>
+					</tr>
+				</table>
+				
+				<div class="servetb">
+					<div class="mail_tbox">
+						<ul class="serve_list">							
+							<!-- <li>
+								<b class="ell">王阳</b>
+								<b class="ell">IT工程部</b>
+								<b class="ell">snowfay@gmail.com</b>							
+							</li>
+							 -->
+						</ul>
+					</div>
+				</div>
+			</li>
+
+			<li class="selec_toright"></li>
+			
+			<li class="resultbox">
+				<p class="check_num">已经添加邮箱<b class="fb">5</b>个</p>
+				<table>
+					<tr class="bgc">
+						<th width="17%">姓名</th>
+						<th width="23%">部门</th>
+						<th width="46%">邮箱地址</th>
+						<th width="14%">操作</th>
+					</tr>
+				</table>
+				
+				<div class="resultb">
+					<div class="mail_tbox">
+						<ul class="selected_list">							
+							<!-- <li>
+								<b class="ell">王阳</b>
+								<b class="ell">IT工程部</b>
+								<b class="ell">snowfay@gmail.com</b>							
+								<b class="ell"><u class="ico io_delete"></u></b>							
+							</li>	 -->						
+						</ul>
+					</div>
+				</div>
+			</li>
+			
+		</ul>
+			
+		<div class="btnbox">			
+			<a href="#" class="btn close" id="">取消</a>
+			<button class="d_none close">click me</button>
+			<a href="#" class="btn" id="createTheMailList">确定</a>
+		</div>
+		
+	</div>	
+</div>
+	
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/dialog-min.js"></script>
+<script src="js/op_page.js"></script>
+<script src="js/demo.js"></script>
+
+
+
+</body>
+</html>

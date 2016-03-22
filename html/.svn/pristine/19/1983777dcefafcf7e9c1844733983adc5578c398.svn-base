@@ -1,0 +1,431 @@
+var OP_Tools = window.OP_Tools = OP_Tools || {};
+$(function () {
+	/*******************
+	 *
+	 * tab切换类
+	 * @param  conArr  切换的内容列表
+	 *		   tabArr  切换的序号列表
+	 *
+	 *******************/
+	OP_Tools.TabAnimate = function (conArr, tabArr) {
+		this.con = conArr;
+		this.tab = tabArr;
+		this._index = null;
+	}
+
+	OP_Tools.TabAnimate.prototype = {
+		displayer : function (type, callbacks) {
+			var _ind = this._index,
+			_con = this.con;
+			type = type || 'fade'
+				switch (type) {
+				case 'fade':
+					_con.eq(_ind).stop(true, true).fadeIn(400).siblings().fadeOut(200);
+					break;
+				case 'show':
+					_con.stop(true, true).hide().eq(_ind).show();
+					break;
+				}
+				this.tab.removeClass('on').eq(_ind).addClass('on');
+			if (callbacks)
+				callbacks(_con.eq(_ind));
+		},
+
+		addMouseover : function (type, callbacks) {
+			var _tabs = this.tab,
+			that = this;
+			_tabs.mouseover(function () {
+				that._index = _tabs.index(this);
+				that.displayer(type, callbacks);
+			});
+		},
+
+		addInterval : function (time, callbacks) {
+			var that = this,
+			_len = this.tab.length,
+			_intv = null;
+			this.con.parent().hover(function () {
+				clearInterval(_intv);
+			}, function () {
+				_intv = setInterval(function () {
+						that._index++;
+						if (_len === that._index)
+							that._index = 0;
+						that.displayer(false, callbacks);
+					}, time);
+			}).trigger('mouseleave');
+		}
+	}	
+	
+	/*******************
+	 *
+	 * 弹层类
+	 * @param  id  弹出的dom
+	 *		   close  关闭按钮
+	 *		   config  设置参数
+	 *
+	 *******************/
+	OP_Tools.popDom = function (id, close, config) {
+		config = config || 1;
+		//默认值
+		var options = {
+			struc : id, //弹层ID
+			close : close, //关闭按钮
+			drag : config.drag || false, //拖动效果
+			diagCursor : config.diagCursor || 'move', //拖动鼠标样式
+			time : config.time || 'max', //定时器默认为不开启定时器
+			isFrame : config.isFrame || true, //是否开启遮罩层
+			opacity : config.opacity || 0.5, //遮罩层默认透明度
+			backcolor : config.backcolor || '#ccc', //遮罩层默认背景色
+			zIndex : config.zIndex || 24, //浮层起始层级
+			fixed : config.fixed || true, //开启滚动事件
+			ParIframe : config.ParIframe || false, //开启iframe 穿透
+			functionAfterClose : config.functionAfterClose || null, //关闭之后的回调函数
+			isloc : config.isloc || false //是否每次弹出重新定位浮层
+		};
+		var box = KM.widget.Dialog('struc', options),
+		_callback = config.callback;
+		box.alert();
+		if (typeof _callback == 'function')	_callback(id);
+
+		this.id = id;
+		this.tip = null;
+	}
+
+	OP_Tools.popDom.prototype = {
+		//显示提示
+		showTip : function (text, time) {
+			var text = text || '这里显示错误信息...',
+			time = time || 3000,
+			_tip = this.tip = $(this.id).find('erro_tip');
+			if (!_tip[0]) {
+				_tip  = $('<div class="erro_tip"><span class="dib">' + text + '</span></div>');
+				$(this.id).append(_tip);
+				_tip.fadeIn().delay(time).fadeOut();
+			} else {
+				_tip.fadeIn().delay(time).fadeOut();
+			}
+		},
+
+		//关闭提示
+		hideTip : function () {
+			this.tip.fadeOut();
+		}
+	}
+	
+	
+	/*******************
+	 *
+	 * class
+	 * 下拉框类
+	 * @param  inputDom  被点击的input节点
+	 *         listObj   下拉框信息的JSON
+	 *
+	 *******************/
+	OP_Tools.SelectList = function (inputDom, listObj) {
+		this.inputDom = inputDom;
+		this.listObj = listObj;
+		this.panel = null;
+	}
+
+	//初始化对象
+	OP_Tools.SelectList.prototype = {
+		draw : function (callback) {
+			var listDom = this.panel = this.creatList(callback),
+			xy = this.getThePosition(this.inputDom);
+			listDom.style.left = xy.x + "px";
+			listDom.style.top = (xy.y + this.inputDom.clientHeight + 2) + "px";
+			listDom.style.width = (this.inputDom.clientWidth) + "px";
+			document.body.appendChild(listDom);
+			listDom.style.display = 'block';
+			this.hide(listDom);
+		},
+
+		//创建下拉框的dom
+		creatList : function (callback) {
+			var _list = this.listObj,
+			_con = '',
+			_ul = document.getElementById('_select-list');
+			if (!_ul) {
+				_ul = document.createElement('ul');
+				_ul.id = '_select-list';
+			}
+			for (var i = 0, k = _list.length; i < k; i++) {
+				var _o = _list[i],
+				_tex = _o.text,
+				_cod = _o.code;
+				_con += '<li data-code="' + _cod + '"><span class="dib ell" title="' + _tex + '">' + _tex + '</span></li>';
+			}
+			_ul.innerHTML = _con;
+			this.bindListEvent(_ul, callback);
+			return _ul;
+		},
+
+		//获取目录的位置
+		getThePosition : function (e) {
+			var x = e.offsetLeft,
+			y = e.offsetTop,
+			that = this;
+			while (e.offsetParent && e.offsetParent.nodeName !== 'BODY') {
+				e = e.offsetParent;
+				if (e.style.position == 'fixed')
+					this.panel.style.position = "fixed";
+				x += e.offsetLeft;
+				y += e.offsetTop - e.scrollTop;
+			}
+			return {
+				"x" : x,
+				"y" : y
+			};
+		},
+
+		//绑定点击事件
+		bindListEvent : function (dom, callback) {
+			var that = this,
+			_lis = dom.getElementsByTagName('li');
+			for (var i = 0, k = _lis.length; i < k; i++) {
+				_lis[i].onclick = function (e) {
+					var _inp1 = that.inputDom,
+					_tex = this.getElementsByTagName('span')[0].innerHTML,
+					_cod = this.getAttribute("data-code"),
+					_inp2 = _inp1.parentNode.getElementsByTagName('input')[1];
+					if (_inp2)
+						_inp2.value = _cod;
+					_inp1.value = _tex;
+					_inp1.focus();
+					this.parentNode.style.display = 'none';
+					var _obj = {
+						code : _cod,
+						text : _tex
+					}
+					if (callback)
+						callback(_obj);
+				};
+			};
+		},
+
+		//控制隐藏
+		hide : function (dom) {
+			$(dom).mouseleave(function () {
+				$(this).hide();
+				this.style.position = 'absolute';
+			});
+			$(document.body).click(function () {
+				$(dom).hide();
+				dom.style.position = 'absolute';
+			});
+		}
+	}
+	
+	
+	/*******************
+	 *
+	 * class
+	 * form输入校验类
+	 * @param
+	 *
+	 *******************/
+	OP_Tools.inputVerify = function () {
+		// this._box = null;
+		// this.creatErrorBox();
+	}
+
+	OP_Tools.inputVerify.prototype = {
+		//限制字符长度
+		checkLength : function (inputs, num) {
+			var that = this;
+			inputs.on('keyup afterpaste', function () {
+				var _len = this.value.length;
+				if (_len > num) {
+					this.value = this.value.substring(0, num);
+					that.showError(this, '长度不能超过' + num + '位');
+					return false;
+				} else {
+					that.hideError();
+				}
+			});
+		},
+
+		//规定输入的内容
+		checkContent : function (inputs, type) {
+			var that = this;
+			inputs.on('keyup afterpaste', function () {
+				that.valueToNumber(this, type);
+			});
+		},
+
+		//非空校验
+		dealWithEmptyDom : function (inputs, str) {
+			var that = this;
+			//值变更时判断
+			inputs.bind('keyup', function () {
+				_toInput(this);
+			});
+
+			//每次获得焦点都进行判断
+			inputs.bind('focus', function () {
+				inputs.each(function (i, d) {
+					_toInput(d);
+				})
+			});
+
+			//如果已经有值了，就还原
+			function _toInput(d) {
+				if (d.value !== '') {
+					$(d).removeClass('bor-red');
+					that.hideError();
+				}
+			}
+
+			//循环判断所有的input，找到为空的则加上class,然后退出
+			for (var i = 0, k = inputs.length; i < k; i++) {
+				var _inp = inputs[i],
+				_tex = _inp.value.replace(/(^\s*)|(\s*$)/g, ""),
+				_cls = _inp.className;
+				if (_tex === '') {
+					_inp.className = _cls + ' bor-red';
+					this.showError(_inp, str);
+					break;
+				}
+			}
+			if (i === k)
+				return true;
+		},
+
+		//元素默认值的切换
+		toggleDefaultValue : function (input) {
+			var _te = input.val().replace(/(^\s*)|(\s*$)/g, ""),
+			_place = input.next(),
+			_box = input.parent();
+			!!_te ? _place.hide() : _place.show();
+			_box.click(function () {
+				input.focus();
+			});
+			input.keydown(function () {
+				_place.hide();
+			});
+			input.blur(function () {
+				var _te = $(this).val().replace(/(^\s*)|(\s*$)/g, ""),
+				_tex = _place.text();
+				if (_te === _tex || _te === '') {
+					$(this).val('');
+					_place.show();
+				}
+			});
+		},
+
+		//设置输入的内容
+		valueToNumber : function (input, type) {
+			var _val = input.value;
+			switch (type) {
+			case 'num': //数字
+				input.value = _val.replace(/\D/g, '');
+				if (_val.match(/\D/g))
+					this.showError(input, '请输入数字');
+				break;
+			case 'en': //英文
+				input.value = _val.replace(/[^a-zA-Z]/g, '');
+				if (_val.match(/[^a-zA-Z]/g))
+					this.showError(input, '请输入英文');
+				break;
+			case 'cn': //汉字
+				input.value = _val.replace(/[^\u4E00-\u9FA5]/g, '');
+				if (_val.match(/[^\u4E00-\u9FA5]/g))
+					this.showError(input, '请输入汉字');
+				break;
+			default:
+				return false;
+			}
+		},
+
+		//获取到目标元素的坐标
+		getThePosition : function (e) {
+			var x = e.offsetLeft,
+			y = e.offsetTop;
+			while (e.offsetParent && e.offsetParent.nodeName !== 'BODY') {
+				e = e.offsetParent;
+				if (e.style.position == 'fixed')
+					this.panel.style.position = "fixed";
+				x += e.offsetLeft;
+				y += e.offsetTop - e.scrollTop;
+			}
+			return {
+				"x" : x,
+				"y" : y
+			};
+		},
+
+		//显示加载中画面
+		showLoading : function (num, text) {
+			this.creatLoadingBox(num, text);
+		},
+
+		//关闭加载中画面
+		closeLoading : function () {
+			document.getElementById('__loading_box').style.display = 'none';
+		},
+
+		//创建loading元素，并加到DOM树里
+		creatLoadingBox : function (num, text) {
+			var _dom = window.parent ? window.parent.document : document, //兼容iframe
+			_load = _dom.getElementById('__loading_box'),
+			num = num || 199,
+			text = text || '加载中，请稍后...';
+			if (!_load) {
+				_load = _dom.createElement('div'),
+				_tex = '<span class="load_infor">' + text + '</span>';
+				_load.id = '__loading_box';
+				_load.style.zIndex = num;
+				_load.innerHTML = _tex;
+				_dom.body.appendChild(_load);
+			} else {
+				_load.style.display = 'block';
+			}
+		},
+
+		//隐藏提示元素
+		hideError : function () {
+			$(this._box).fadeOut(400);
+		},
+
+		//显示提示元素
+		showError : function (dom, str) {
+			str = str || '此为必填项';
+			var that = this;
+			xy = this.getThePosition(dom),
+			_tex = str + '<i class="bor"><i></i></i>',
+			_dom = document,
+			_box = _dom.getElementById('__error_message');
+			if (!_box) {
+				_box = _dom.createElement('div');
+				_box.id = '__error_message';
+				_box.className = 'err_msg';
+				_dom.body.appendChild(_box);
+			}
+			_box.innerHTML = _tex;
+			_box.style.left = xy.x + "px";
+			_box.style.top = (xy.y - 32) + "px";
+			$(_box).fadeIn(400);
+			document.body.onclick = function () {
+				that.hideError();
+			}
+		}
+	}
+	
+});
+
+
+// 返回顶部
+(function gotoTop($totop) {
+	$totop.on('click', function () { //定义返回顶部点击向上滚动的动画
+		$('html,body').animate({
+			scrollTop : 0
+		}, 500);
+	})
+
+	//为窗口的scroll事件绑定处理函数
+	$(window).scroll(function () {
+		var s = $(window).scrollTop(); //获取窗口的滚动条的垂直位置
+		s > 100 ? $totop.fadeIn(100) : $totop.fadeOut(200);
+	});
+})($('#totop'));

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的应用-列表详情</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<div class="tit_inforbox ptb30">
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助(HR)</h3>
+					<p>所属系统：职能营运系统</p>
+					<p>支持平台：IE6、IE7、IE8、IE9、IE10、firefox、chrome</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- <div class="border_b">			
+			<menu class="c_menu">
+				<a href="">基本信息</a>
+				<a href="#" class="on">API目录</a><span></span>
+				<a href="">API变更记录</a>			
+			</menu>			
+		</div> -->
+		
+		<section class="column pb70">
+			<div class="sidbar dib">
+				<ul class="sid_menu">
+					<li>
+						<b>应用信息</b>
+					</li>
+					<li>
+						<b class="on">服务管理</b>
+					</li>
+					<li>
+						<b>方法管理</b>
+					</li>					
+					<li>
+						<b class="">监控警告</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li>监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>					
+					<li>
+						<b>数据分析</b>
+						
+						<ul class="menu_child">
+							<li>邮件群组管理</li>
+							<li >监控策略管理</li>
+							<li>监控告警控制台</li>
+							<li class="border_none">异常日志控制台</li>
+						</ul>
+					</li>
+					
+					<li class="border_none">
+						<b>用户授权</b>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="con_details dib">					
+				<div class="con_seachbox border_b">
+					<input class="inp_tex sea_tool" type="text" placeholder="搜索应用"><u class="ico io_search"></u>
+					<div class="fr vam">
+						<span class="pr15">您已发布22个方法</span>
+						<a href="#" class="btn">发布方法</a>
+					</div>
+				</div>
+				
+				<ul class="myApp_list pb70">
+					<li class="ad_tit">
+						<span class="ico ico_hr"></span>						
+						<div class="dib minfor_box">
+							<h3>方法名称
+								<!-- <div class="jur_mark dib m_open">
+									<span>审核通过</span>
+								</div> -->					
+							</h3>
+							<p>方法分类</p>
+							<p>方法的简单说明</p>
+						</div>
+						
+						<div class="btnbox_ul fr d_none">
+							<a href="#" class="d_btn">删除</a>
+							<a href="#" class="d_btn">编辑</a>
+						</div>
+					</li>
+					
+					<li class="ad_tit">
+						<span class="ico ico_hr"></span>						
+						<div class="dib minfor_box">
+							<h3>方法名称
+								<div class="jur_mark dib m_impower">
+									<span>审核中</span>
+								</div>					
+							</h3>
+							<p>方法分类</p>
+							<p>方法的简单说明</p>
+						</div>
+						
+						<div class="btnbox_ul fr d_none">
+							<a href="#" class="d_btn">删除</a>
+							<a href="#" class="d_btn">编辑</a>
+						</div>
+					</li>
+					
+					<li class="ad_tit">
+						<span class="ico ico_hr"></span>						
+						<div class="dib minfor_box">
+							<h3>方法名称
+								<div class="jur_mark dib m_disable">
+									<span>未提交</span>
+								</div>					
+							</h3>
+							<p>方法分类</p>
+							<p>方法的简单说明</p>
+						</div>
+						
+						<div class="btnbox_ul fr d_none">
+							<a href="#" class="d_btn">删除</a>
+							<a href="#" class="d_btn">编辑</a>
+						</div>
+					</li>
+					
+					<li class="ad_tit">
+						<span class="ico ico_hr"></span>						
+						<div class="dib minfor_box">
+							<h3>方法名称
+								<div class="jur_mark dib m_impower">
+									<span>审核中</span>
+								</div>					
+							</h3>
+							<p>方法分类</p>
+							<p>方法的简单说明</p>
+						</div>
+						
+						<div class="btnbox_ul fr d_none">
+							<a href="#" class="d_btn">删除</a>
+							<a href="#" class="d_btn">编辑</a>
+						</div>
+					</li>
+					
+					<li class="ad_tit">
+						<span class="ico ico_hr"></span>						
+						<div class="dib minfor_box">
+							<h3>方法名称
+								<div class="jur_mark dib m_disable">
+									<span>未提交</span>
+								</div>					
+							</h3>
+							<p>方法分类</p>
+							<p>方法的简单说明</p>
+						</div>
+						
+						<div class="btnbox_ul fr d_none">
+							<a href="#" class="d_btn">删除</a>
+							<a href="#" class="d_btn">编辑</a>
+						</div>
+					</li>
+				</ul>
+				
+				<div class="page fr">
+					<input type="button" class="d_btn" value="首页" />
+					<input type="button" class="d_btn d_btn2" value="上一页" />
+					第<input type="text" class="page_num" value="1"/>页<span class="plr">|</span>共10页					
+					<input type="button" class="d_btn d_btn2" value="下一页" />
+					<input type="button" class="d_btn" value="尾页" />
+					每页显示
+					<select>
+						<option value="5">5</option>
+						<option value="10">10</option>
+						<option value="20">20</option>
+					</select>
+					行
+				</div>
+			</div>
+		</section>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/op_page.js"></script>
+</body>
+</html>
+

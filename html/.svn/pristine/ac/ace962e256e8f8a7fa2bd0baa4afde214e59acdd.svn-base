@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发布方法</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>			
+			<span>发布方法</span>
+		</div>
+		
+		<div class="pb70">			
+			<section class="pt30 infor_panel">
+				<h3 class="panel_tit">
+					<i class="bor"><i></i></i>
+					填写基本信息					
+				</h3>
+				
+				<ul class="inp_list">					
+					<li>
+						<label for=""><span class="fcr">*</span>方法英文名称：</label>
+						<input type="text" class="inp_tex w330" />
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>方法中文名称：</label>
+						<input type="text" class="inp_tex w330" />
+						<span class="fccc plr15">如：UUMS_ESB2UUMS_QUERYORDER [ 5-15英文 ]</span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>方法全称：</label>
+						<input type="text" class="inp_tex w330" />
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>方法功能分类：</label>
+						<input type="text" class="inp_tex w330" /><u class="ico io_seth"></u>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>方法负责人：</label>
+						<input type="text" class="inp_tex w330" /><u class="ico io_seth"></u>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>请求地址：</label>
+						<input type="text" class="inp_tex w330" />
+						<span class="fccc plr15">如：UUMS_ESB2UUMS_QUERYORDER [ 5-15英文 ]</span>
+					</li>
+					
+					<li>
+						<label for=""><span class="fcr">*</span>沙箱地址：</label>
+						<input type="text" class="inp_tex w330" />
+					</li>
+					
+					
+					<li>
+						<label for="" class="vat"><span class="fcr">*</span>方法功能描述：</label>
+						<textarea class="w420 vam"></textarea>
+						<span class="fccc plr15">填写服务应用的业务场景</span>
+					</li>					
+				</ul>
+				
+				<div class="btnbox pt30">
+					<a href="#" class="btn">提交</a>
+					<a href="#" class="btn">取消</a>
+				</div>
+			</section>
+		</div>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+
+
+
+
+
+<!--  弹层 选择方法分类  -->
+<div class="popuptbox" id="chooseApp">
+	<div class="p10">
+		<h3 class="pop_tit border_b">
+			选择方法分类
+			<a href="#" class="ico io_close close fr"></a>
+		</h3>		
+				
+		<div class="tb_seachbox">
+			<input class="inp_tex sea_tool" type="text" placeholder="工号搜索"><u class="ico io_search"></u>			
+		</div>
+		
+		<div class="tablebox">
+			<table>
+				<tr class="bgc">
+					<th width="5%">选择</th>
+					<th width="20%">名称</th>
+					<th width="35%">说明</th>
+					<th width="40%">命名空间</th>
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>					
+				</tr>
+				
+				<tr class="bgc">
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>	
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>					
+				</tr>
+				
+				<tr class="bgc">
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>	
+				</tr>
+				
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>					
+				</tr>
+				
+				<tr class="bgc">
+					<td><input type="checkbox" /></td>
+					<td>IT工程部</td>
+					<td>王阳</td>
+					<td>增删改查</td>	
+				</tr>
+			</table>
+			
+		</div>
+		
+		<div class="page">
+			<div class=" fr">
+				<input type="button" class="d_btn" value="首页" />
+				<input type="button" class="d_btn d_btn2" value="上一页" />
+				第<input type="text" class="page_num" value="1"/>页<span class="plr">|</span>共10页					
+				<input type="button" class="d_btn d_btn2" value="下一页" />
+				<input type="button" class="d_btn" value="尾页" />
+				<!-- 每页显示
+				<select>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="20">20</option>
+				</select>
+				行 -->
+			</div>
+		</div>
+			
+		<div class="">			
+			<a href="#" class="d_none close"></a>
+			<a href="#" class="btn close" id="submit_app_test">确定</a>
+		</div>
+		
+	</div>	
+</div>
+	
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/dialog-min.js"></script>
+<script src="js/op_page.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>
+

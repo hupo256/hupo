@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>HR自助-api详情</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<div class="tit_inforbox ptb30">
+			<div class="ad_tit">
+				<span class="ico ico_hr"></span>						
+				<div class="dib minfor_box">
+					<h3>HR自助(HR)</h3>
+					<p>所属系统：职能营运系统</p>
+					<p>支持平台：IE6、IE7、IE8、IE9、IE10、firefox、chrome</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="border_b">			
+			<menu class="c_menu">
+				<a href="">基本信息</a><span></span>
+				<a href="#" class="on">API目录</a><span></span>
+				<a href="">API变更记录</a>			
+			</menu>			
+		</div>
+		
+		<section class="column pb70 pt30">
+			<div class="sidbar dib">
+				<div class="sid_search">
+					<div class="border_b">
+						<a href="#" class="goback fcb"><span class="gtlt">&lt;</span>返回API目录</a>
+						<input class="inp_tex sea_tool" type="text" placeholder="搜索"><u class="ico io_search"></u>
+					</div>
+				</div>
+				
+				<ul class="sid_menu sid_menus">
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+
+					<li>
+						<b class="on">
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+					
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+					
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+					
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+
+					<li>
+						<b>
+							<p>查询运服务</p>
+							<div class="fccc ell">巴西世界杯特辑:中国老球迷的世界杯记忆</div>
+						</b>
+					</li>
+				</ul>
+				
+				<div class="sid_page tac">
+					<a href="#" class="fcb gtlt fl">&lt;</a>
+					<a href="">1</a>
+					<a href="">2</a>
+					<a href="#" class="on">3</a>
+					<a href="">4</a>
+					<a href="">5</a>
+					<a href="">...</a>
+					<a href="">10</a>
+					<a href="#" class="fcb gtlt fr">&gt;</a>
+				</div>
+			</div>
+			
+			<div class="con_details dib">
+				<div class="deta_titbox pb30">
+					<a href="#" class="fr btn">申请访问</a>
+					<h3 class="dib">
+						<div class="jur_mark dib m_open"><span>开放</span></div>查询运单服务					
+					</h3>
+					<a href="#" class="fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					
+				</div>
+			
+				<div class="border_b">			
+					<menu class="c_menu">
+						<a href="">API授权类</a>
+						<a href="#" class="on">系统级别</a>
+						<a href="">应用系别参数</a>			
+					</menu>			
+				</div>
+				
+				<p class="pt30">API说明：通过设置必要的参数，来获取商品后台标准类目属性，以及这些属性里面详细的属性</p>
+				
+				<section class="pt30 infor_panel">
+				<h3 class="panel_tit">
+					<i class="bor"><i></i></i>
+					API列表					
+				</h3>
+				
+				<ul class="inf_list">
+					<li>
+						<span class="fccc fr">系统角色新增</span>
+						<div class="jur_mark dib m_open"><span>开放</span></div>
+						<a href="#" class="dib ell fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysRole </a>
+					</li>
+					<li>
+						<span class="fccc fr">WEB前端开发工具集</span>
+						<div class="jur_mark dib m_close"><span>不开放</span></div>
+						<a href="#" class="dib ell fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					</li>
+					<li>
+						<span class="fccc fr">应用备份</span>
+						<div class="jur_mark dib m_impower"><span>授权</span></div>
+						<a href="#" class="dib ell fcb">com.deppon.foss.module.sysrole.server.action</a>
+					</li>
+					<li>
+						<span class="fccc fr">系统角色新增</span>
+						<div class="jur_mark dib m_open"><span>开放</span></div>
+						<a href="#" class="dib ell fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysRole </a>
+					</li>
+					<li>
+						<span class="fccc fr">WEB前端开发工具集</span>
+						<div class="jur_mark dib m_close"><span>不开放</span></div>
+						<a href="#" class="dib ell fcb">com.deppon.foss.module.sysrole.server.action.SysRoleAction.saveSysR.server.action.SysRoleAction </a>
+					</li>
+					<li>
+						<span class="fccc fr">应用备份</span>
+						<div class="jur_mark dib m_impower"><span>授权</span></div>
+						<a href="#" class="dib ell fcb">com.deppon.foss.module.sysrole.server.action</a>
+					</li>
+				</ul>				
+			</section>
+			
+			</div>
+		</section>
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/op_page.js"></script>
+</body>
+</html>
+

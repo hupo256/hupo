@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width">
+<title>add video</title>
+ 
+</head>
+<body>
+
+<div>
+	<video width="640" height="264" webkit-playsinline> 
+		<source src="image/mov_bbb.mp4" > 
+	</video> <br/>
+	
+  <canvas width="640" height="264" ></canvas>
+</div>
+
+<div>
+	<p>
+		<input type="button" id="play" value="play">
+		<span id="position">00:00</span> / <span id="duration"></span>
+	</p>
+</div>
+  
+<script> 
+    var addEvent = (function () {
+        if (document.addEventListener) {
+            return function (el, type, fn) {
+                if (el && el.nodeName || el === window) {
+                    el.addEventListener(type, fn, false);
+                } else if (el && el.length) {
+                    for (var i = 0; i < el.length; i++) {
+                        addEvent(el[i], type, fn);
+                    }
+                }
+            };
+        } else {
+            return function (el, type, fn) {
+                if (el && el.nodeName || el === window) {
+                    el.attachEvent('on' + type, function () { return fn.call(el, window.event); });
+                } else if (el && el.length) {
+                    for (var i = 0; i < el.length; i++) {
+                        addEvent(el[i], type, fn);
+                    }
+                }
+            };
+        }
+    })();    
+
+    var video = document.querySelector('video');
+    var togglePlay = document.querySelector('#play');
+    var position = document.querySelector('#position');
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+ 
+    addEvent(togglePlay, 'click', function () {
+        video.playbackRate = 0.5;
+        if (video.paused) {
+            if (video.ended) video.currentTime = 0;
+            video.play();
+            this.value = "pause";
+        } else {
+            video.pause();
+            this.value = "play";
+        }
+    });
+ 
+    setInterval(function () {
+        position.innerHTML = asTime(video.currentTime);
+       // ctx.drawImage(video, 0, 0, video.width, video.height, 0, -canvas.height / 2, canvas.width, canvas.height);
+        ctx.drawImage(video, 0, 0);
+    }, 1000 / 15);
+ 
+    addEvent(video, 'ended', function () {
+        togglePlay.value = "play";
+    });
+ 
+    addEvent(video, 'canplay', function () {
+        video.muted = true;
+        document.querySelector('#duration').innerHTML = asTime(this.duration);
+        //startCanvas();
+    }); 
+ 
+    function startCanvas() {
+        canvas.setAttribute('height', Math.floor(video.height));
+        canvas.setAttribute('width', Math.floor(video.width)); 
+        ctx.translate(0, canvas.height);
+        ctx.scale(1, -1);
+        ctx.globalAlpha = 0.3;
+        ctx.drawImage(video, 0, 0, video.width, video.height, 0, -canvas.height/2, canvas.width, canvas.height);       
+    }
+ 
+    function asTime(t) {
+        t = Math.round(t);
+        var s = t % 60;
+        var m = Math.round(t / 60);
+ 
+        return two(m) + ':' + two(s);
+    }
+ 
+    function two(s) {
+        s += "";
+        if (s.length < 2) s = "0" + s;
+        return s;
+    }
+</script>
+</body> 
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>clip</title>
+<style type="text/css">
+*{ padding:0; margin:0;}
+ul{ list-style-type:none; overflow:hidden; zoom:1; width:1000px; margin:30px auto; }
+li{ float:left; width:500px;}
+#container{width:480px; height:480px; margin:0 auto; border:1px solid #999; position:relative;background:url(http://images.cnblogs.com/cnblogs_com/wtcsy/192373/r_xx.jpg);}
+#container .block{height:100px; width:100px; border:1px solid #000000; position:absolute; left:50px; top:50px; background:#fff;filter:alpha(opacity=30);opacity:0.3; cursor:move;}
+#container .tips{ position:absolute; padding:5px; border:1px solid #ccc;background:#fff;filter:alpha(opacity=60);opacity:0.6; display:none; font-size:12px; color:#333; ;}
+.tips span{ display:inline-block;zoom:1; width:28px;}
+.rRightDown,.rLeftDown,.rLeftUp,.rRightUp,.rRight,.rLeft,.rUp,.rDown{
+position:absolute;background:#f00;width:6px;height:6px;z-index:5;font-size:0;}
+.rLeftDown,.rRightUp{cursor:ne-resize;}
+.rRightDown,.rLeftUp{cursor:nw-resize;}
+.rRight,.rLeft{cursor:e-resize;}
+.rUp,.rDown{cursor:n-resize;}
+.rRightDown{ bottom:-3px; right:-3px;}
+.rLeftDown{ bottom:-3px; left:-3px;}
+.rRightUp{ top:-3px; right:-3px;}
+.rLeftUp{ top:-3px; left:-3px;}
+.rRight{ right:-3px; top:50%}
+.rLeft{ left:-3px; top:50%}
+.rUp{ top:-3px; left:50%}
+.rDown{ bottom:-3px; left:50%}
+#imgC{ border:1px solid #CCC; width:0; height:0; margin:0 auto;background:url(http://images.cnblogs.com/cnblogs_com/wtcsy/192373/r_xx.jpg);}
+.code {
+    background: none repeat scroll 0 0 #E3F4F9;
+    border: 1px solid #BAE2F0;
+    font: 12px "Courier New",Courier,monospace;
+    margin: 30px auto;
+    padding: 10px 10px 40px;
+ width:980px;
+}
+.code p{ height:24px; line-height:24px;}
+.code span{ display:inline-block;zoom:1; margin-right:5px; width:85px; font-weight:bold; color:#00F}
+</style>
+</head>
+<body>
+<div class="code">
+ <div class="how">使用方法</div>
+    <p>$("#container").clip({
+		imgC : $("#imgC"),
+        blockClass : "block",
+        tipsClass  : "tips"        
+ });</p>
+    <p><span>imgC :</span> 表示裁剪图片的容器,也就是右边的图</p>
+    <p><span>blockClass :</span> block的样式名  也就是页面上的可以拖动的滑块的样式 因为怕和别的页面上的样式重名  默认是block</p>
+    <p><span>tipsClass  :</span> tips的样式名   也就是页面上显示left width height top的那个span的样式名 默认是tips</p>
+</div>
+
+<ul>
+	<li>
+		<div id="container"></div>
+	</li>
+	<li>
+		<div id="imgC"></div>
+	</li>
+</ul>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</body>
+</html>

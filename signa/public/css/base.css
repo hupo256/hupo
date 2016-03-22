@@ -1,0 +1,39 @@
+@charset "utf-8";
+body{
+	font:14px/1.5 "Microsoft Yahei", proxima-nova, Arial, "Hiragino Sans GB",sans-serif;
+	color:#555;
+	overflow:auto;
+}
+body,h1,h2,h3,h4,p,ul,ol,dl,dd{	margin:0;}
+ul,ol{padding-left:0;list-style:none;}
+*{box-sizing:content-box;}
+/*image with no-border*/
+a{text-decoration:none;}
+img{border:0;}
+u{font-style:normal;}
+h3,h4,h5{line-height:1.2; font-family:"Microsoft Yahei", proxima-nova, Arial, "Hiragino Sans GB",sans-serif;}
+p{font-size:14px;font-family:"Microsoft Yahei", proxima-nova, Arial, "Hiragino Sans GB",sans-serif;}
+.fr{float:right;}
+.fl{float:left;}
+.tac{text-align:center;}
+.tal{text-align:left;}
+.d_none{display:none;}
+.warpper{
+	padding:2em;
+}
+.con{	
+	padding:3em;		
+}
+.con a{
+	line-height:2;
+	display:inline-block;
+	margin:0 10px;
+	padding:0 2em;
+	background:#eee;
+	border:1px solid #ccc;
+	border-radius:5px;
+}
+
+
+
+

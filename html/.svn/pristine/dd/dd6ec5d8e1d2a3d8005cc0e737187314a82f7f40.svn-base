@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>出错了</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<nav id="m_menu" class="m_menu dib">
+				<a href="#">首页</a>
+				<a href="#">文档</a>
+				<a class="on" href="#">应用中心</a>
+				<a href="#">数据报表</a>
+			</nav>
+			
+			<div class="userbox fr dib vam">
+				<a href="#" class="fcg">登录</a><span>|</span><a href="#" class="">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	<section class="contentbox">
+		<div class="breadbox">
+			<a href="#" class="ico tohome gotopage">首页</a><span class="gtlt">&gt;</span>
+			<a href="#" class="gotopage">应用中心</a><span class="gtlt">&gt;</span>
+			<span>HR自助</span>
+		</div>
+		
+		<section class="error_page tac">
+			<!-- <div class="p404">
+				<div class="er_infor">
+					<h3>抱歉， 出错了，也许程序猿睡着了！</h3>
+					<p class="fccc">系统将在5秒后自动返回首页，您也可以选择下面的操作：</p>
+					<a href="#" class="fcb">返回首页</a>
+					<a href="#" class="fcb plr15">回到上一页</a>
+				</div>			
+			</div> -->
+			
+			<!-- 500页面 -->
+			<div class="p500">
+				<div class="er_infor">
+					<h3>抱歉，不小心出错了！</h3>
+					<p class="fccc">系统将在5秒后自动返回首页，您也可以选择下面的操作：</p>
+					<a href="#" class="fcb">返回首页</a>
+					<a href="#" class="fcb plr15">回到上一页</a>
+				</div>			
+			</div>
+		</section>
+			
+	</section>
+	
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="#" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/op_page.js"></script><script src="js/demo.js"></script>
+</body>
+</html>
+

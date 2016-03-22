@@ -1,0 +1,294 @@
+/****  banner   ****/
+.bannerbox{
+	position:relative;
+	text-align:center;
+	margin-top:-1px;
+	min-width:980px;
+	height:430px;
+	overflow:hidden;
+	
+}
+.banner li{
+	width:100%;
+	min-width:980px;
+	height:430px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.appad,
+.ban1,
+.ban3{
+	background:-moz-linear-gradient(-60deg, #1a4380,#40c390);
+	background:-webkit-linear-gradient(-60deg, #1a4380,#40c390);
+}
+.ban2,
+.ban4{
+	background:-moz-linear-gradient(-60deg, #1a2980,#26d0ce);
+	background:-webkit-linear-gradient(-60deg, #1a2980,#26d0ce);
+}
+.anibox{
+	width:980px;
+	height:430px;
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+}
+.anibox img,
+.anibox span{
+	position:absolute;
+	opacity:0;
+}
+
+/*  ban1  */
+.ban1 img:nth-child(1){
+	left:80px;
+	top:70px;
+}
+.ban1 img:nth-child(2){
+	left:980px;
+	top:70px;
+}
+.ban1 img:nth-child(3){
+	left:223px;
+	top:160px;
+}
+.ban1 img:nth-child(4){
+	left:88px;
+	top:430px;
+}
+
+/*  ban2  */
+.ban2 img:nth-child(1){
+	right:86px;
+	top:10px;
+}
+.ban2 img:nth-child(2){
+	right:44px;
+	top:430px;
+}
+.ban2 img:nth-child(3){
+	left:-30px;
+	top:160px;
+}
+.ban2 img:nth-child(4){
+	left:120px;
+	top:211px;
+}
+@-webkit-keyframes toRound{
+	0% {       
+        -webkit-transform: rotate(0);  
+    }
+    100% {      
+        -webkit-transform: rotate(65deg);  
+    }
+}
+@keyframes toRound {
+    0% {       
+        transform: rotate(0);  
+    }
+    100% {      
+        transform: rotate(65deg);  
+    }
+}
+.aniCircle{
+	-webkit-animation-name: toRound;
+    -webkit-animation-duration: 16s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+	
+	animation-name: toRound;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;  
+}
+
+
+/*  ban3  */
+.aniCircle2,
+.circle_bg{
+	width:446px;
+	height:446px;	
+	top:-8px;
+	left:0;
+	overflow:hidden;
+}
+.circle_bg b{
+	transition:all .4s ease .3s;	
+	width:142px;
+	height:142px;
+	background:#fff;
+	position:absolute;
+	left:50%;
+	top:50%;	
+	opacity:0;
+	margin:-71px 0 0 -71px;
+	border-radius:50%;
+}
+.circle_bg .cirbg1{-webkit-transform:scale(1.6);transform:scale(1.6);opacity:0.2;}
+.circle_bg .cirbg2{-webkit-transform:scale(2.1);transform:scale(2.1);opacity:0.2;}
+.circle_bg .cirbg3{-webkit-transform:scale(2.6);transform:scale(2.6);opacity:0.2;}
+.circle_bg .cirbg4{-webkit-transform:scale(3.1);transform:scale(3.1);opacity:0.2;}
+.aniCircle2 img:nth-child(1){
+	left:50%;
+	top:50%;
+	margin:-71px 0 0 -71px;
+}
+.aniCircle2 img:nth-child(2){
+	left:55px;
+	top:144px;
+}
+.aniCircle2 img:nth-child(3){
+	left:164px;
+	top:70px;
+}
+.aniCircle2 img:nth-child(4){
+	left:86px;
+	top:321px;
+}
+.aniCircle2 img:nth-child(5){
+	left:336px;
+	top:65px;
+}
+.aniCircle2 img:nth-child(6){
+	left:300px;
+	top:276px;
+}
+.img_ban3 img:nth-child(1){
+	left:383px;
+	top:160px;
+}
+.img_ban3 img:nth-child(2){
+	left:980px;
+	top:217px;
+}
+
+
+/*  ban4   */
+.ban4 span:nth-child(1){
+	background:url(../images/bannerImg/ban4_1.png) no-repeat;
+	width:142px;
+	height:142px;
+	right:183px;
+	top:430px;
+	z-index:5;	
+}
+.ban4 span:nth-child(2){
+	background:url(../images/bannerImg/ban4_2.png) no-repeat;
+	width:347px;
+	height:0;
+	right:94px;
+	top:109px;
+	z-index:4;
+}
+.ban4 span:nth-child(3){
+	background:url(../images/bannerImg/ban4_3.png) no-repeat;
+	width:758px;
+	height:376px;
+	right:0;
+	bottom:54px;
+	z-index:0;	
+}
+.ban4 span:nth-child(4){
+	background:url(../images/bannerImg/ban4_4.png) no-repeat;
+	width:38px;
+	height:38px;
+	right:378px;
+	bottom:316px;
+	transform-origin:32px 31px;
+}
+.ban4 span:nth-child(5){
+	background:url(../images/bannerImg/ban4_5.png) no-repeat;
+	width:52px;
+	height:52px;
+	right:441px;
+	bottom:138px;
+	transform-origin:52px 24px;	
+}
+.ban4 span:nth-child(6){
+	background:url(../images/bannerImg/ban4_6.png) no-repeat;
+	width:46px;
+	height:46px;
+	right:366px;
+	bottom:220px;
+	transform-origin:48px 48px;		
+}
+.ban4 span:nth-child(7){
+	background:url(../images/bannerImg/ban4_7.png) no-repeat;
+	width:58px;
+	height:58px;
+	right:272px;
+	bottom:285px;
+	transform-origin:32px 51px;	
+}
+.ban4 span:nth-child(8){
+	background:url(../images/bannerImg/ban4_8.png) no-repeat;
+	width:61px;
+	height:61px;
+	right:107px;
+	bottom:287px;
+	transform-origin:23px 45px;	
+}
+.ban4 span:nth-child(9){
+	background:url(../images/bannerImg/ban4_9.png) no-repeat;
+	width:84px;
+	height:84px;
+	right:22px;
+	bottom:152px;
+	transform-origin:21px 57px;	
+}
+
+.ban4 span:nth-child(10){
+	background:url(../images/bannerImg/ban4_10.png) no-repeat;
+	width:395px;
+	height:85px;
+	left:-40px;
+	top:153px;
+}
+@-webkit-keyframes toRotate{
+	0% {       
+        -webkit-transform: rotate(0);  
+    }
+	25% {      
+        -webkit-transform: rotate(-5deg);  
+    }
+	50% {      
+        -webkit-transform: rotate(0);  
+    }
+	75% {      
+        -webkit-transform: rotate(5deg);  
+    }
+    100% {      
+        -webkit-transform: rotate(0);  
+    }
+}
+@keyframes toRotate {
+    0% {       
+        transform: rotate(0);  
+    }
+	25% {      
+        transform: rotate(-5deg);  
+    }
+	50% {      
+        transform: rotate(0);  
+    }
+	75% {      
+        transform: rotate(5deg);  
+    }
+    100% {      
+        transform: rotate(0);  
+    }
+}
+.img_rotate{
+	-webkit-animation-name: toRotate;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out; 
+	
+	animation-name: toRotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;  
+}

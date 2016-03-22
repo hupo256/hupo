@@ -1,0 +1,195 @@
+
+	var banAni1 = {
+		getDom : function(){
+			return $('.ban1').find('img');
+		},
+		play : function(){
+			var domArr = this.getDom();
+			domArr.each(function(i,d){
+				getBegainCSS($(d));
+			});
+			domArr.eq(3).animate({top:'212',opacity:1}, 800);		
+			domArr.eq(0).delay(500).animate({left:'297', opacity:1}, 600);
+			domArr.eq(1).delay(500).animate({left:'535', opacity:1}, 600);
+			domArr.eq(2).delay(1000).animate({top:'136',opacity:1}, 400);
+		},
+		goBack : function(){
+			var domArr = this.getDom();
+			returnBack(domArr);
+		}
+	}
+	var banAni2 = {
+		getDom : function(){
+			return $('.ban2').find('img');
+		},
+		play : function(){
+			var imgArr = this.getDom();
+			imgArr.each(function(i,d){
+				getBegainCSS($(d));
+			});
+			imgArr.eq(0).animate({opacity:1}, 800)	
+				  .next().delay(500).animate({top:'108', opacity:1}, 600)
+				  .next().delay(1000).animate({left:'43', opacity:1}, 400)
+				  .next().delay(1000).animate({left:'43',opacity:1}, 400);
+		},
+		goBack : function(){
+			var domArr = this.getDom();
+			returnBack(domArr);
+		}
+	}
+	var banAni3 = {
+		getDom : function(){
+			return obj = {
+				bArr1 : $('.circle_bg').find('b'),
+				imgArr2 : $('.aniCircle2').find('img'),
+				imgArr3 : $('.img_ban3').find('img')
+			}
+		},
+		play : function(){
+			var obj = this.getDom(),
+				bArr1 = obj.bArr1,
+				imgArr2 = obj.imgArr2,
+				imgArr3 = obj.imgArr3;
+			bArr1.each(function(i,d){
+				getBegainCSS($(d));
+			});
+			imgArr2.each(function(i,d){
+				getBegainCSS($(d));
+			});
+			imgArr3.each(function(i,d){
+				getBegainCSS($(d));
+			});
+			
+			imgArr2.eq(0).fadeIn(400).delay(600).animate({opacity:1},600, function(){
+				console.log($(this));
+				bArr1.eq(0).addClass('cirbg1')
+					 .next().delay(600).addClass('cirbg2')	
+					 .next().delay(600).addClass('cirbg3')	
+					 .next().delay(600).addClass('cirbg4');
+				imgArr2.eq(1).delay(600).animate({opacity:1}, 200, function(){
+					$(this).next().animate({opacity:1}, 50)
+						 .next().animate({opacity:1}, 50)
+						 .next().animate({opacity:1}, 50)
+						 .next().animate({opacity:1}, 50, function(){
+							$(this).parent().addClass('aniCircle');						
+							imgArr3.eq(0).animate({left:'610', opacity:1}, 400)
+								   .next().animate({left:'610', opacity:1}, 400);
+						 });	
+				});
+			});	
+		},
+		goBack : function(){
+			var obj = this.getDom(),
+				bArr1 = obj.bArr1,
+				imgArr2 = obj.imgArr2,
+				imgArr3 = obj.imgArr3;
+			returnBack(bArr1);
+			returnBack(imgArr2);
+			returnBack(imgArr3);
+		}
+	}
+	var banAni4 = {
+		getDom : function(){
+			return $('.ban4').find('span');
+		},
+		play : function(){
+			var imgArr = this.getDom();
+			imgArr.each(function(i,d){
+				getBegainCSS($(d));
+			});
+			imgArr.eq(0).animate({opacity:1}, 800, function(){
+				$(this).animate({opacity:1,top:'195'}, 200, function(){
+					$(this).animate({opacity:1,top:'218'}, 100);
+				});			
+			});
+			imgArr.eq(1).delay(1200).animate({opacity:1,height:'185'}, 400, function(){
+				$(this).next().next().animate({opacity:1}, 50)
+					   .next().delay(100).animate({opacity:1}, 50)
+					   .next().delay(150).animate({opacity:1}, 50)
+					   .next().delay(200).animate({opacity:1}, 50)
+					   .next().delay(250).animate({opacity:1}, 50)
+					   .next().delay(300).animate({opacity:1}, 50);			
+			});
+			imgArr.eq(2).delay(2400).animate({opacity:1}, 800, function(){
+				imgArr.eq(9).animate({left:'6', opacity:1}, 400)
+			});		
+		},
+		goBack : function(){
+			var domArr = this.getDom();
+			returnBack(domArr);
+		}
+	}
+	
+	function getBegainCSS(dom){
+		var obj = {
+			opacity : dom.css('opacity'),			
+			left : dom.css('left'),
+			top : dom.css('top'),			
+			height : dom.css('height'),
+			cls : dom[0].className
+		},
+		tex = JSON.stringify(obj);
+		dom[0].setAttribute('data-style', tex);
+		return tex;
+	}
+	
+	function returnBack(domArr){		
+		domArr.each(function(i,d){
+			var conf = JSON.parse(d.getAttribute('data-style'));			
+			if(!conf) return false;
+			$(d).css(conf);
+			d.className = conf.cls;
+		})
+	}
+
+	
+	
+	// 首页banner切换
+	var _ban = $('#banner'),
+		_bans = _ban.children('li'),
+		_tags = _ban.next().children('span'),		
+		aniArr = [banAni1,banAni2,banAni3,banAni4],
+		_len = _bans.length,	
+		_index = 0;				
+	
+	_tags.mouseover(function () {
+		console.log(11);
+		_index = _tags.index(this);
+		displayer();	
+	}).eq(0).mouseover();	
+	
+	
+	_ban.parent().hover(function () {
+		clearTimeout(_intv)
+	}, function () {	
+		console.log(22);
+		_intv = setTimeout(function(){
+			console.log(33);
+			_index++;			
+			if (_len === _index) _index = 0;
+			displayer();
+			setTimeout(arguments.callee, 4000);
+		}, 4000);		
+	}).trigger('mouseleave');
+	
+	// setTimeout(function(){
+		// _index++;			
+		// if (_len === _index) _index = 0;
+		// displayer();
+		// setTimeout(arguments.callee, 4000);
+	// }, 4000);
+	
+	function displayer(){
+		console.log(_index);
+		_bans.eq(_index).stop(true, true).fadeIn(200).siblings().fadeOut(400);
+		_tags.removeClass('on').eq(_index).addClass('on');
+		
+		var anim = aniArr[_index];
+		anim.play();
+		for(var i=0,k=aniArr.length; i<k; i++){
+			var _ani = aniArr[i];
+			_ani.goBack();
+		}
+	}
+	
+	

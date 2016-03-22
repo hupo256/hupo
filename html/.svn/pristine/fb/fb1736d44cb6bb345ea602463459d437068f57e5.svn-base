@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>开放平台</title>
+<link rel="stylesheet" href="css/base.css" />
+<script src="js/html5_ie.js"></script>  
+<!-- <script src="firebug/build/firebug-lite.js"></script> -->
+</head>
+<body>
+<div class="outWrap">
+	<!-- header -->
+	<header class="bgc border_b">
+		<div class="headline"></div>
+		<div class="headbox">
+			<h1 class="logo dib"><a href=""></a></h1>
+			
+			<menu id="m_menu" class="m_menu dib">
+				<a href="">文档</a>
+				<a class="on" href="">应用中心</a>
+				<a href="">数据报表</a>
+			</menu>
+			
+			<div class="userbox fr dib vam">
+				<a href="" class="fcg">登录</a><span>|</span><a href="" class="border_non">我的应用</a>
+			</div>
+		</div>
+	</header>
+	
+	
+	<!-- banner -->
+	<section class="bannerbox">
+		<ul id="banner" class="banner">			
+			<li class="ban1"><span></span></li>
+			<li class="ban2"><span></span></li>
+			<li class="ban3"><span></span></li>
+		</ul>
+		
+		<div class="tabs ban_tabs">
+			<span class="on">1</span>
+			<span>2</span>
+			<span>3</span>
+		</div>
+	</section>
+	
+	
+	<!-- summary -->
+	<section>
+		<div class="summarybox">
+			<ul id="summary" class="summary fix">
+				<li>
+					<div class="sum_infor dib">
+						<h3>关于服务</h3>
+						<p>公司服务由ESB开发组统一管理，通常服务协议主要包含WebService、Resuful和Jms三种，交互模式包含同步、异步和单向，服务传输的消息格式为XML和JSON等</p>
+					</div>					
+					
+					<a href="" class="sum_btn btn">发布服务</a>					
+				</li>
+				
+				<li>
+					<div class="sum_infor dib">
+						<h3>关于应用</h3>
+						<p>协议主要包含WebService、Resuful和Jms三种，交互模式包含同步、异步和单向，服务传输的消息格式为XML和JSON等</p>
+					</div>					
+					
+					<a href="" class="sum_btn btn">接入应用</a>					
+				</li>
+				
+				<li>
+					<div class="sum_infor dib">
+						<h3>关于方法</h3>
+						<p>公司服务由ESB开发组统l和Jms三种，交互模式包含同步、异步和单向，服务传输的消息格式为XML和JSON等</p>
+					</div>					
+					
+					<a href="" class="sum_btn btn">发布应用</a>					
+				</li>
+			</ul>
+		</div>
+		
+		<section class="bgc border_tb">
+			<div class="sumbox">
+				<ul id="sumtabs" class="sum_tabs ">
+					<li class="on">发布“服务”其实是这样的 <i class="bor"><i></i></i></li>
+					<li>接入“应用”体验更强大功能 <i class="bor"><i></i></i></li>
+					<li>发布“方法”精确分析用户行为 <i class="bor"><i></i></i></li>
+				</ul>
+			</div>
+		</section>
+	</section>
+	
+	
+	<!-- feature -->
+	<section>
+		<div class="featurebox ptb70">
+			<h2 class="sec_h2">平台特色功能</h2>
+			<ul class="m_list fix">
+				<li>
+					<span class="ico ico_word"></span>					
+					<div class="dib minfor_box">
+						<h3>文档介绍</h3>
+						<p>丰富的说明文档，告诉你是什么，为什么这样做，该怎么做，解答您的疑惑</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_api"></span>					
+					<div class="dib minfor_box">
+						<h3>服务PAI</h3>
+						<p>收录公司所有服务，您可以随心搜索，浏览服务详细的API信息</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_list"></span>					
+					<div class="dib minfor_box">
+						<h3>数据报表</h3>
+						<p>多维度精确的应用分析、服务分析，多种报表，让您对应用和服务胸有成竹</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_edit"></span>					
+					<div class="dib minfor_box">
+						<h3>应用管理</h3>
+						<p>快速接入您的应用，让平台帮助你轻松管理，并提供更多其他高级功能</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_sevice"></span>					
+					<div class="dib minfor_box">
+						<h3>服务管理</h3>
+						<p>帮助您的统一管理服务列表，不再为众多服务文档的混乱而烦恼</p>
+					</div>
+				</li>
+				
+				<li>
+					<span class="ico ico_secure"></span>					
+					<div class="dib minfor_box">
+						<h3>监控告警</h3>
+						<p>自定义、精确监控应用的服务与方法，帮助您及时处理异常问题，保证应用和服务正常运行</p>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</section>
+	
+	
+	<!-- app -->
+	<section class="bgc border_tb">
+		<div class="appbox pt70">
+			<h2 class="sec_h2">平台特色功能
+				<a href="">更多<span class="gtlt">&gt;</span></a>
+			</h2>
+			
+			<ul id="appulbox" class="appulbox">
+				<li>
+					<ul class="m_list fix">
+						<li>
+							<span class="ico ico_hr"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">HR自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_logist"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">后勤自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_money"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">财务自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_finance"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">证照系统</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_license"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">财务自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<ul class="m_list fix">						
+						<li>
+							<span class="ico ico_logist"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">后勤自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_money"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">财务自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_finance"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">证照系统</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_license"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">财务自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<ul class="m_list fix">
+						<li>
+							<span class="ico ico_hr"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">财务自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="ico ico_logist"></span>						
+							<div class="dib minfor_box">
+								<h3><a href="">财务自助</a></h3>
+								<p>丰富的说明文档，告诉你是什么，为什么，该怎么做，解决您的迷惑</p>
+							</div>
+						</li>
+					</ul>
+				</li>
+				
+				
+				
+			</ul>
+			
+			<div id="apptabs" class="tabs app_tabs">
+				<span class="on">1</span>
+				<span>2</span>
+				<span>3</span>
+			</div>
+		</div>
+	</section>
+	
+	
+	<!-- current -->
+	<section>
+		<div class="freashbox ptb70">
+			<h2 class="sec_h2">已发布的服务</h2>
+			<ul class="freash">
+				<li>
+					<h3>最新发布</h3>
+					<ul class="infor_list">
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<h3>最新发布</h3>
+					<ul class="infor_list">
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<h3>最新发布</h3>
+					<ul class="infor_list">
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>	
+						
+						<li>
+							<span class="fr">2014-10-5 12：20：32</span>
+							<a href="">会从那开始是运单服务</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</section>
+	
+	<div class="h186"></div>
+</div>	
+	
+<!-- footer -->
+<footer  class="bgc border_tb">
+	<div class="footer ptb70">
+		<p class="fr f_user">
+			<span>已接入应用<b class="fcg f18">34</b>个，已发布服务<b class="fcg f18">89</b>个</span><span>|</span>
+			<a href="">网站管理</a><span>|</span><a href="">文档中心</a>
+		</p>
+		
+		<div class="fl">
+			<a href="" class="logo_l"></a>
+			<p>Copyright &copy; 2012-2015 德邦物流股份有限公司. All rights reserved</p>
+		</div>
+	</div>
+</footer>
+
+<div id="totop" class="totop"></div>
+	
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/op_page.js"></script>
+</body>
+</html>
+
