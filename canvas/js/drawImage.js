@@ -233,14 +233,14 @@ snowMaker.prototype = {
 			ctx.fill();	
 		}
 		
-		preImage('image/fontimg.png', function(){
-			ctx.drawImage(this, 0, 0, 375, 605);
-		});
+		// preImage('image/fontimg.png', function(){
+			// ctx.drawImage(this, 0, 0, 375, 605);
+		// });
 		
-		var _imgX = ctx.canvas.width/2;
-		preImage('image/icon.png', function(){
-			ctx.drawImage(this,375, 0, 40,45, _imgX-20, 400, 40,45);
-		});
+		// var _imgX = ctx.canvas.width/2;
+		// preImage('image/icon.png', function(){
+			// ctx.drawImage(this,375, 0, 40,45, _imgX-20, 400, 40,45);
+		// });
 	}
 }
 
