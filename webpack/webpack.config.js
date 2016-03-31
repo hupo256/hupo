@@ -1,6 +1,6 @@
 // webpack.config.js
 module.exports = {
-  entry: './main.js',
+  entry: './src/js/main.js',
   output: {
     path: './build', // This is where images AND js will go
     publicPath: 'https://www.dianrong.com/landing/wp-content/uploads/2016/01/', // This is used to generate URLs to e.g. images
