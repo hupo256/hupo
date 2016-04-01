@@ -1,18 +1,41 @@
+// webpack.config.js
+var path = require('path')
+var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
-	entry: "./src/main.js",
-	output: {
-		filename: "build/build.js"
+	entry : ['./index'],
+	output : {
+		// path : path.join(__dirname, 'dist'),
+		path : path.join(__dirname, 'src'),
+		filename : 'bundle.js'
 	},
-	module: {
+	plugins : [
+		// new webpack.optimize.UglifyJsPlugin({
+			// compressor : {
+				// warnings : false,
+			// },
+		// })
+		new webpack.optimize.CommonsChunkPlugin('common.js'),
+		new ExtractTextPlugin("styles.css"),
+	],
+	module : {
+		// loaders : [{
+				// test : /\.css$/,
+				// loaders : ['style', 'css']
+			// }, {
+				// test : /\.(png|jpg|gif)$/,
+				// loaders : [
+					// 'file?hash=sha512&digest=hex&name=[hash].[ext]',
+					// 'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+				// ]
+			// }
+		// ]
+		
 		loaders: [
-			//.css 文件使用 style-loader 和 css-loader 来处理
-			{ test: /\.css$/, loader: "style!css" },
-			//.js 文件使用 jsx-loader 来编译处理
-			{ test: /\.js$/,  loader: "jsx-loader" }
+			{test:/\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
+			{test: /\.scss$/, loader: "style!css!sass"},
+			{test: /\.less$/, loader: "style!css!less"}
 		]
-	},
-	resolve: {
-		extensions: ['', '.js', '.jsx']
-	},
-	plugins: []
-};
+	}
+}

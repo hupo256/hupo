@@ -1,16 +1,38 @@
-// webpack.config.js
+var webpack = require('webpack');
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+ 
 module.exports = {
-  entry: './src/js/main.js',
-  output: {
-    path: './build', // This is where images AND js will go
-    publicPath: 'https://www.dianrong.com/landing/wp-content/uploads/2016/01/', // This is used to generate URLs to e.g. images
-    filename: 'bundle.js'
-  },
-  module: {
-    loaders: [
-      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }, // use ! to chain loaders
-      { test: /\.css$/, loader: 'style-loader!css-loader' },
-      {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'} // inline base64 URLs for <=8k images, direct URLs for the rest
-    ]
-  }
+    //插件项
+    // plugins: [ new ExtractTextPlugin("styles.css")],
+    //页面入口文件配置
+    entry: {
+        index : './main.js'
+    },
+    //入口文件输出配置
+    output: {
+        path: 'build',
+        filename: '[name].js'
+        // filename: 'build.js'
+    },
+    module: {
+        //加载器配置
+        loaders: [
+            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            // { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") }
+            { test: /\.js$/, loader: 'jsx-loader?harmony' },
+            { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+        ]
+    },
+    //其它解决方案配置
+    resolve: {
+        root: 'E:/hph/htdocs/hupo/webpack/src/', //绝对路径
+        extensions: ['', '.js', '.json', '.scss'],
+        alias: {
+            AppStore : 'js/stores/AppStores.js',
+            ActionType : 'js/actions/ActionType.js',
+            AppAction : 'js/actions/AppAction.js'
+        }
+    }
 };

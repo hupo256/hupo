@@ -1,13 +1,29 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>loading box</title>
+<link rel="stylesheet" href="src/css/loadbox.css" />
 <script src="src/js/zepto.min.js"></script>
 </head>
-
 <body>
+<div class="wrapper">
 	<div id="content"></div>
-	<script src="build/bundle.js"></script>
+	<div class="loadingbox">	
+		<div class="item">
+			<section>1</section>
+			<section>2</section>		
+			<section>3</section>
+			<section>4</section>
+			<section>5</section>
+			<section>6</section>
+		</div>	
+	</div> 
+	<div class="probox" id="pbox"></div>
+</div>
+
+<!-- <script src="src/js/loadbox.js"></script> -->
+<script src="build/index.js"></script>
 </body>
 </html>
