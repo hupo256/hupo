@@ -3,13 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>demo1</title>
-	<!-- <link rel="stylesheet" href="style.css" /> -->
+	<link rel="stylesheet" href="style.css" />    <!-- 引入打包后的css -->
 </head>
 <body>
 	<div>Hello,world</div>
 	<div class="con"></div>
 	<div class="imgbox"></div>
-	<!-- <script src="../dist/bundle.js"></script> -->
-	<script src="bundle.js"></script>
+	
+	<script src="common.js"></script>  <!-- 引入打包后的公共单元   -->
+	<script src="bundle.js"></script>  <!-- 引入打包后的js   -->
 </body>
 </html>
+
+<!-- http://192.168.0.87:8009/wui/theme/ecology8/skins/default/page -->
