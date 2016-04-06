@@ -4,28 +4,28 @@ var path = require('path')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");   //单独打包css
 
 module.exports = {
-	//入口配置
-	// entry : ['./index'],
+	//入口配置	
 	entry : {
 		main : './index'
 	},
 	
 	//输出配置
 	output : {
-		path : path.join(__dirname, 'src'),
+		path : path.join(__dirname, 'build'),
 		filename : '[name].js'
 	},
 	
 	//所要用到的插件
 	plugins : [		
-		new webpack.optimize.CommonsChunkPlugin('common.js'),   //提取公共单元
-		new ExtractTextPlugin("[name].css"),  //输出的css文件名		
+		new webpack.optimize.CommonsChunkPlugin('common.js'),   //提取公共单元到 common.js 这个文件里
+		new ExtractTextPlugin("[name].css")  //输出的css文件名		
 	],
 	
 	//加载器配置
 	module : {		
 		loaders: [
 			{test:/\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader")},
+			// {test: /\.css$/, loaders: ['style', 'css']},
 			{test: /\.scss$/, loader: "style!css!sass"},
 			{test: /\.less$/, loader: "style!css!less"},
 			{test : /\.(png|jpg|gif)$/,loaders : [
