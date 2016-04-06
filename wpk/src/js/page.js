@@ -1,2 +1,2 @@
-console.log('page done 2');
+console.log('page ok 1');
 // console.log($('body'));
