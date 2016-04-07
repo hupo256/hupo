@@ -13,14 +13,14 @@ module.exports = {
 	//输出配置
 	output : {
 		path : path.join(__dirname, 'build'),
-		filename : './js/[name].[chunkhash:8].js'
+		filename : '[name].[chunkhash:8].js'
 	},
 	
 	//所要用到的插件
 	plugins : [		
 		// new HtmlWebpackPlugin(),   //生成匹配的hash
-		new webpack.optimize.CommonsChunkPlugin('./js/common.js'),  //提取公共单元到 common.js 这个文件里
-		new ExtractTextPlugin("./css/[name].[chunkhash:8].css"),     //输出的css文件名
+		new webpack.optimize.CommonsChunkPlugin('common.js'),  //提取公共单元到 common.js 这个文件里
+		new ExtractTextPlugin("[name].[chunkhash:8].css"),     //输出的css文件名
 		new HtmlWebpackPlugin({                               //根据模板插入css/js等生成最终HTML
 			// favicon:'./src/img/favicon.ico',     //favicon路径
 			filename:'index.html',         //生成的html存放路径，相对于 path
