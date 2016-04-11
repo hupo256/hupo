@@ -41,6 +41,7 @@ module.exports = {
 			// {test: /\.css$/, loaders: ['style', 'css']},
 			{test: /\.scss$/, loader: "style!css!sass"},
 			{test: /\.less$/, loader: "style!css!less"},
+			// {test: /\.(png|jpg)$/, loader: 'url-loader?limit=1000&name=../img/[hash].[ext]'}  //小于8kb的直接转为base64
 			{test: /\.(png|jpg)$/, loader: 'url-loader?limit=1000&name=../img/[hash].[ext]'}  //小于8kb的直接转为base64
 			// {test : /\.(png|jpg|gif)$/,loaders : [
 					// 'file?hash=sha512&digest=hex&name=[hash].[ext]',
