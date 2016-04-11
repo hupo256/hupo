@@ -5,7 +5,7 @@ body{
 .con{
 	width:300px;
 	height:500px;
-	background:url(../img/eb011e1014cf36c14e358ced6ef34bb9.jpg) no-repeat;
+	background:url(eb011e1014cf36c14e358ced6ef34bb9.jpg) no-repeat;
 	background-size:100% 100%;
 	display:inline-block;
 }
@@ -13,7 +13,7 @@ body{
 	display:inline-block;
 	width:20px;
 	height:20px;
-	background:url(../img/1574855c5b21439fa1c5dc4366bda34d.png) no-repeat;
+	background:url(1574855c5b21439fa1c5dc4366bda34d.png) no-repeat;
 }*{padding:0;margin:0}
 .outwarp{
 	border:1px solid #ccc;
