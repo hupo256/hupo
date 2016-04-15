@@ -1,0 +1,42 @@
+@charset "utf-8";
+body,html{
+	font:14px/1.6 "微软雅黑", "宋体", "黑体";	
+	color:#333;
+	height:100%;
+	background:#f6f6f6;
+}
+body,h1,h3,h4,p,ul,ol,dl,dd{
+	margin:0;
+}
+
+.wrapper{
+	height:100%;
+	width:100%;
+	overflow:hidden;	
+}
+.barragebox{
+	height:100%;
+	width:100%;
+	background:#f0f0f0;
+	background-size:100% 100%;
+}
+.barragebox p{	
+	text-align:center;
+	padding:2% 20%;
+	box-sizing:border-box;
+	color:#16c;
+	/* text-shadow:1px 1px 1px #16a; */
+}
+.run p{	
+	animation:toLeft 6s ease infinite;
+}
+
+@-webkit-keyframes toLeft{	
+	100%{transform:translateX(-100%);}	
+}
+
+
+
+
+
+

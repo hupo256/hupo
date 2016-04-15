@@ -15,3 +15,7 @@ body{
 	height:20px;
 	background:url(../img/firebug.png) no-repeat;
 }
+p{
+	background:#222;
+	color:#c00;
+}

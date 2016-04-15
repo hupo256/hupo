@@ -19,7 +19,7 @@ module.exports = {
 	//所要用到的插件
 	plugins : [		
 		// new HtmlWebpackPlugin(),   //生成匹配的hash
-		new webpack.optimize.CommonsChunkPlugin('common.js'),  //提取公共单元到 common.js 这个文件里
+		new webpack.optimize.CommonsChunkPlugin('common.[chunkhash:8].js'),  //提取公共单元到 common.js 这个文件里
 		new ExtractTextPlugin("[name].[chunkhash:8].css"),     //输出的css文件名
 		new HtmlWebpackPlugin({                               //根据模板插入css/js等生成最终HTML
 			// favicon:'./src/img/favicon.ico',     //favicon路径
@@ -49,6 +49,11 @@ module.exports = {
 			// }
 		]
 	},
+	
+	//开发服务器
+	devServer:{
+        contentBase:'./build'
+    },
 	
 	//其它解决方案配置
     resolve: {
