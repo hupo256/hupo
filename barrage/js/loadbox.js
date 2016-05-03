@@ -32,4 +32,9 @@ $(function(){
 		}	
 		return _html;
 	}
+	
+	
+	for( var i in document.location){
+		console.log(i);
+	}
 });
