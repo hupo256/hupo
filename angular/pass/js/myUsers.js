@@ -9,6 +9,7 @@ angular.module('myApp', []).controller('userCtrl', function($scope) {
 		{id:3, fName:'Sal',lName:"Smith" },
 		{id:4, fName:'Jack',lName:"Jones" },
 		{id:5, fName:'John',lName:"Doe" },
+		{id:5, fName:'John1',lName:"Doe1" },
 		{id:6, fName:'Peter',lName:"Pan" }
 	];
 	
