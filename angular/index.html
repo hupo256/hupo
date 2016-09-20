@@ -1,18 +1,40 @@
-<!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <script src="js/angular.min.1.4.js"></script>
+<title>AngularJS 表单</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/angular.min.1.4.js"></script>
 </head>
 <body>
-<body ng-app="myApp" ng-controller="userCtrl">
-
-<div class="container">
-  <div ng-include="'myUsers_List.html'"></div>
-  <div ng-include="'myUsers_Form.html'"></div>
-</div>
-
-<script src="js/myUsers.js"></script>
+   <h2>AngularJS Sample Application</h2>
+   <div ng-app="mainApp" ng-controller="StudentController">
+      {{fees | currency }}  <br/><br/>
+      {{admissiondate | date }}   <br/><br/>
+      {{rollno | number }}  
+   </div>
+   <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script> -->
+   <!-- <script src="https://code.angularjs.org/1.2.5/i18n/angular-locale_da-dk.js"></script> --> 
+   <script>
+      var mainApp = angular.module("mainApp", []);
+	    
+      mainApp.controller('StudentController', function($scope) {
+            $scope.fees = 100;
+			$scope.admissiondate  = new Date();
+            $scope.rollno = 123.45;
+      });
+      
+   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
